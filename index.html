@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le Studio · Voyage avec Vue</title>
+<meta name="description" content="Le studio de Voyage avec Vue raconte les hôtels, gîtes et maisons d’hôtes en photo, vidéo et récit, et les aide à réserver en direct.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Layout: an independent magazine issue. Cover, sommaire, édito, dossier, conseils, portraits, la carte, agenda, courrier, rédaction. Committed single look: hot pink, tomato red, ink black, paper cream, grain. */
+:root{
+  --pink:#F2BCD0; --pink-soft:#F9DEE7; --red:#F3B29E; --ink:#1F1A1D; --cream:#FBF6EF; --sun:#F6E3A8; --sage:#CFE2D2; --sky:#CFE0EE; --deep:#B4543C;
+  --display:"Anton", "Impact", "Arial Narrow", sans-serif;
+  --serif:"Instrument Serif", Georgia, serif;
+  --body:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:1.05rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:72rem;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+section{padding-block:4.5rem}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:.005em;text-wrap:balance}
+p{margin:0}
+.grain{position:relative;isolation:isolate}
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;opacity:.14;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.rub{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-size:1rem;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:.25rem .7rem .2rem;margin-bottom:1.2rem}
+.star{font-family:var(--body);font-size:1.2em;line-height:1}
+h2{font-size:clamp(2.6rem,8vw,5.2rem)}
+.serif{font-family:var(--serif);font-style:italic;text-transform:none;font-weight:400;letter-spacing:0}
+.chapo{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.7rem);line-height:1.3;max-width:42rem;margin-top:1.2rem}
+.btn{appearance:none;font:400 1.15rem var(--display);letter-spacing:.06em;text-transform:uppercase;padding:.85rem 1.4rem .75rem;border:3px solid var(--ink);background:var(--ink);color:var(--cream);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn.alt{background:var(--sun);color:var(--ink)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.btn:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.datebar{display:inline-block;border:3px solid var(--ink);font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;padding:.2rem .7rem .1rem;font-size:clamp(1.2rem,3vw,1.7rem)}
+
+/* COVER */
+.cover{background:linear-gradient(165deg,var(--pink) 0%,var(--pink) 48%,var(--red) 100%);color:var(--ink);padding-block:1.25rem 3rem;overflow:hidden}
+.topline{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem;font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:.95rem;border-bottom:3px solid var(--ink);padding-bottom:.6rem}
+.mast{display:flex;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.mast .logo{font-family:var(--display);font-size:clamp(5.5rem,22vw,15rem);line-height:.8;letter-spacing:-.01em}
+.mast .logo .o{display:inline-block;width:.62em;height:.62em;border-radius:50%;border:.12em solid var(--ink);vertical-align:.04em;margin-inline:.02em}
+.mast .side{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.6rem,4.5vw,2.8rem);line-height:.95;padding-bottom:.6rem}
+.mast .side .serif{display:block;font-size:.7em}
+.cover-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:2rem;margin-top:2rem;align-items:end}
+.cover h1{font-size:clamp(3rem,9vw,6.6rem)}
+.cover h1 .serif{display:block;font-size:.58em;line-height:1;margin-top:.3rem}
+.coverlines{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.coverlines li{border-top:3px solid var(--ink);padding-top:.6rem}
+.coverlines b{display:block;font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.55rem;line-height:1}
+.coverlines span{font-family:var(--serif);font-style:italic;font-size:1.15rem}
+.cover .ctas{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.75rem}
+.burst{position:absolute;right:max(16px,4vw);top:7.5rem;width:9rem;height:9rem;display:grid;place-items:center;text-align:center;background:var(--sun);clip-path:polygon(50% 0,61% 18%,82% 10%,80% 32%,100% 40%,85% 55%,96% 76%,74% 78%,68% 100%,50% 87%,32% 100%,26% 78%,4% 76%,15% 55%,0 40%,20% 32%,18% 10%,39% 18%);font-family:var(--display);text-transform:uppercase;line-height:.95;font-size:1.1rem;transform:rotate(-10deg)}
+.cover{position:relative}
+
+/* SOMMAIRE */
+.toc{background:var(--ink);color:var(--cream);padding-block:2.5rem}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem 1.5rem}
+.toc a{color:inherit;text-decoration:none;display:flex;gap:.7rem;align-items:baseline}
+.toc .n{font-family:var(--display);font-size:2rem;color:var(--pink);line-height:1}
+.toc .t{font-family:var(--display);text-transform:uppercase;font-size:1.15rem;line-height:1.05}
+.toc .t i{display:block;font-family:var(--serif);text-transform:none;font-size:1rem;opacity:.8}
+.toc a:hover .t{color:var(--sun)}
+
+/* EDITO */
+.edito{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:3rem;align-items:start}
+.edito .body{columns:2;column-gap:2rem;font-size:1.05rem}
+.edito .body p+p{margin-top:1rem}
+.edito .body p:first-child::first-letter{font-family:var(--display);float:left;font-size:4.4rem;line-height:.8;padding:.3rem .4rem 0 0;color:var(--deep)}
+.sign{margin-top:1.5rem;font-family:var(--serif);font-style:italic;font-size:1.3rem}
+
+/* DOSSIER */
+.dossier{background:var(--red)}
+.posters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:2.5rem}
+.poster{min-width:0;background:var(--cream);border:3px solid var(--ink);padding:1.5rem 1.4rem 1.7rem;display:flex;flex-direction:column;gap:.8rem}
+.poster:nth-child(2){background:var(--pink-soft);transform:rotate(1.2deg)}
+.poster:nth-child(3){background:var(--sky);transform:rotate(-1deg)}
+.poster .big{font-family:var(--display);font-size:3.2rem;line-height:.85;color:var(--deep)}
+.poster h3{font-size:1.75rem}
+.dossier .answer{margin-top:2.5rem;background:var(--ink);color:var(--cream);padding:1.6rem 1.8rem;display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center;justify-content:space-between}
+.dossier .answer p{font-family:var(--serif);font-size:1.5rem;line-height:1.25;max-width:42rem}
+.dossier .answer .btn{background:var(--pink);color:var(--ink);border-color:var(--pink)}
+
+/* CONSEILS */
+.conseils-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem}
+.articles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1.5rem;margin-top:2.5rem}
+.art{grid-column:span 2;min-width:0;border-top:3px solid var(--ink);padding-top:.9rem;display:flex;flex-direction:column;gap:.6rem}
+.art.lead{grid-column:span 4;grid-row:span 2}
+.art .vis{aspect-ratio:4/3;max-width:100%;background:var(--v);position:relative;isolation:isolate}
+.art.lead .vis{aspect-ratio:16/10}
+.art .cat{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:.95rem;color:var(--deep)}
+.art h3{font-size:1.8rem}
+.art.lead h3{font-size:clamp(2.2rem,4.5vw,3.4rem)}
+.art .dek{font-family:var(--serif);font-size:1.2rem;line-height:1.3}
+.art details{margin-top:.2rem}
+.art summary{cursor:pointer;list-style:none;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:1rem;display:inline-flex;gap:.4rem;border-bottom:3px solid var(--pink);padding-bottom:.1rem}
+.art summary::-webkit-details-marker{display:none}
+.art details[open] summary{border-color:var(--deep)}
+.art ol,.art ul{margin:.8rem 0 0;padding-left:1.2rem;display:grid;gap:.45rem;font-size:.98rem}
+.art li::marker{font-family:var(--display);color:var(--deep)}
+.v1{--v:radial-gradient(60% 70% at 30% 35%,#F6E3A8 0,transparent 60%),linear-gradient(160deg,#F2BCD0,#F3B29E)}
+.v2{--v:radial-gradient(50% 60% at 70% 30%,#FBF6EF 0,transparent 55%),linear-gradient(200deg,#CFE0EE,#8FA7BE)}
+.v3{--v:radial-gradient(45% 55% at 50% 45%,#F9DEE7 0,transparent 60%),linear-gradient(170deg,#F6E3A8,#F3B29E)}
+.v4{--v:radial-gradient(50% 60% at 35% 60%,#FBF6EF 0,transparent 60%),linear-gradient(140deg,#9DBFA4,#CFE2D2)}
+.v5{--v:radial-gradient(55% 60% at 60% 40%,#F6E3A8 0,transparent 55%),linear-gradient(180deg,#CFE0EE,#F2BCD0)}
+.vis .tagline{position:absolute;left:.8rem;bottom:.7rem;font-family:var(--display);text-transform:uppercase;color:var(--cream);font-size:1.1rem;letter-spacing:.04em}
+
+/* PORTRAITS */
+.portraits{background:var(--pink)}
+.refs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem;margin-top:2.5rem}
+.ref{min-width:0;background:var(--ink);color:var(--cream);display:flex;flex-direction:column}
+.ref .vis{aspect-ratio:4/5;max-width:100%;background:var(--v)}
+.ref .txt{padding:1rem 1rem 1.2rem;display:flex;flex-direction:column;gap:.35rem}
+.ref .place{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--pink-soft)}
+.ref h3{font-size:1.5rem}
+.ref p{font-size:.92rem;opacity:.85}
+.press{margin-top:2rem;font-family:var(--serif);font-size:1.3rem}
+
+/* LA CARTE */
+.offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:2.5rem;align-items:start}
+.offer{min-width:0;border:3px solid var(--ink);background:var(--cream);display:flex;flex-direction:column}
+.offer .head{padding:1.2rem 1.3rem 1rem;background:var(--h);border-bottom:3px solid var(--ink)}
+.offer:nth-child(1){--h:var(--pink-soft)} .offer:nth-child(2){--h:var(--pink)} .offer:nth-child(3){--h:var(--sage)}
+.offer h3{font-size:2.8rem}
+.offer .for{font-family:var(--serif);font-style:italic;font-size:1.2rem;margin-top:.3rem}
+.offer ul{list-style:none;margin:0;padding:1.1rem 1.3rem;display:grid;gap:.6rem}
+.offer li{padding-left:1.4rem;position:relative}
+.offer li::before{content:"✶";position:absolute;left:0;top:0;color:var(--deep)}
+.offer .price{margin-top:auto;border-top:3px solid var(--ink);padding:.8rem 1.3rem;font-family:var(--display);text-transform:uppercase;font-size:1.35rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.3rem;align-items:baseline}
+.offer .price span{font-family:var(--body);text-transform:none;font-size:.85rem}
+.entry{margin-top:1.5rem;border:3px dashed var(--ink);padding:1.4rem 1.6rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;background:#FFFFFF66}
+.entry h3{font-size:2rem}
+.entry p{max-width:38rem;margin-top:.3rem}
+
+/* PROMESSES */
+.promises{background:var(--ink);color:var(--cream)}
+.promises .rub{background:var(--pink);color:var(--ink)}
+.plist{list-style:none;margin:2.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 3rem}
+.plist li{border-top:2px solid #FFF4EA44;padding:1.2rem 0;display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:.8rem}
+.plist .s{color:var(--sun);font-size:1.8rem;line-height:1}
+.plist b{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.5rem;line-height:1;display:block}
+.plist span{opacity:.85}
+
+/* AGENDA */
+.agenda{background:var(--sage)}
+.dates{display:grid;gap:1rem;margin-top:2.5rem}
+.date{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr) auto;gap:1rem 1.5rem;align-items:center;border-top:3px solid var(--ink);padding-top:1rem}
+.date h3{font-size:2rem}
+.date p{font-family:var(--serif);font-size:1.2rem}
+
+/* COURRIER */
+.letters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin-top:2.5rem}
+.letter{min-width:0;border:3px solid var(--ink);padding:1.3rem 1.4rem;background:#FFFFFF}
+.letter:nth-child(even){background:var(--sky)}
+.letter .q{font-family:var(--serif);font-style:italic;font-size:1.35rem;line-height:1.25}
+.letter .q::before{content:"« "} .letter .q::after{content:" »"}
+.letter .from{font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;margin-top:.4rem;opacity:.7}
+.letter .a{margin-top:.9rem;padding-top:.8rem;border-top:2px solid var(--ink)}
+.letter .a b{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--deep);margin-right:.3rem}
+
+/* REDACTION */
+.redac{background:linear-gradient(165deg,var(--pink),var(--red))}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:2rem;max-width:52rem;background:var(--cream);border:3px solid var(--ink);padding:1.5rem}
+.form label{display:flex;flex-direction:column;gap:.35rem;font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-size:1rem;min-width:0}
+.form .full{grid-column:1/-1}
+input,select,textarea{font:400 1rem var(--body);text-transform:none;letter-spacing:0;color:var(--ink);background:#FFFFFF;border:2px solid var(--ink);border-radius:0;padding:.7rem .8rem;width:100%}
+textarea{min-height:6rem;resize:vertical}
+.sent{grid-column:1/-1;font-weight:700;min-height:1.4rem}
+
+footer{background:var(--ink);color:var(--cream)}
+footer .wrap{padding-block:2.5rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between}
+footer .logo{font-family:var(--display);font-size:2.6rem;line-height:1}
+footer .logo .o{display:inline-block;width:.6em;height:.6em;border-radius:50%;border:.12em solid var(--cream);vertical-align:.02em}
+footer p{font-family:var(--serif);font-style:italic;font-size:1.35rem}
+footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-transform:uppercase;letter-spacing:.14em}
+
+@media (max-width:900px){
+  .cover-grid,.edito{grid-template-columns:1fr}
+  .toc ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .posters,.offers{grid-template-columns:1fr}
+  .poster:nth-child(n){transform:none}
+  .articles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .art,.art.lead{grid-column:span 2;grid-row:auto}
+  .refs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .burst{display:none}
+}
+@media (max-width:600px){
+  .edito .body{columns:1}
+  .art{grid-column:span 2}
+  .plist,.letters,.form{grid-template-columns:1fr}
+  .date{grid-template-columns:1fr}
+  .toc ol{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .12s ease, box-shadow .12s ease}}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<header class="cover grain">
+  <div class="wrap">
+    <div class="topline"><span>N°01 · Hiver 2026-27</span><span>Photo · vidéo · récit · conseil</span><span>Par Voyage avec Vue</span></div>
+    <div class="mast">
+      <div class="logo">VAV</div>
+      <div class="side">Le Studio<span class="serif">photo, vidéo, récit &amp; conseil</span></div>
+    </div>
+    <div class="burst" aria-hidden="true">Rien<br>n'est<br>généré</div>
+    <div class="cover-grid">
+      <div>
+        <h1>On raconte votre lieu.<span class="serif">Vous remplissez en direct.</span></h1>
+        <div class="ctas">
+          <a class="btn" href="#redaction">Demander un diagnostic ✶</a>
+          <a class="btn alt" href="#conseils">Lire les conseils</a>
+        </div>
+      </div>
+      <ul class="coverlines">
+        <li><b>Hors saison</b><span>Remplir l'hiver sans tout miser sur les plateformes</span></li>
+        <li><b>Photo</b><span>Les images qui manquent à presque tous les hébergeurs</span></li>
+        <li><b>Portraits</b><span>Ils nous ont ouvert leurs portes</span></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- SOMMAIRE -->
+<nav class="toc" aria-label="Sommaire">
+  <div class="wrap">
+    <ol>
+      <li><a href="#edito"><span class="n">01</span><span class="t">Édito<i>Pourquoi on fait ça</i></span></a></li>
+      <li><a href="#dossier"><span class="n">02</span><span class="t">Le dossier<i>Votre lieu, vos images</i></span></a></li>
+      <li><a href="#conseils"><span class="n">03</span><span class="t">Conseils<i>À lire, à garder</i></span></a></li>
+      <li><a href="#portraits"><span class="n">04</span><span class="t">Portraits<i>Lieux racontés</i></span></a></li>
+      <li><a href="#carte"><span class="n">05</span><span class="t">La carte<i>Nos formules</i></span></a></li>
+      <li><a href="#promesses"><span class="n">06</span><span class="t">Nos promesses<i>Ce qu'on s'engage à faire</i></span></a></li>
+      <li><a href="#agenda"><span class="n">07</span><span class="t">Agenda<i>Les tournées</i></span></a></li>
+      <li><a href="#redaction"><span class="n">08</span><span class="t">La rédaction<i>Nous écrire</i></span></a></li>
+    </ol>
+  </div>
+</nav>
+
+<!-- EDITO -->
+<section class="wrap" id="edito">
+  <span class="rub"><span class="star">✶</span> Édito</span>
+  <div class="edito">
+    <h2>On vient, <span class="serif">on s'émerveille,</span> on raconte.</h2>
+    <div>
+      <div class="body">
+        <p>On passe nos journées dans des lieux de vie : des maisons d'hôtes au bout d'un chemin, des hôtels de village, des gîtes qui sentent le bois et le café. Chaque fois, la même chose nous frappe : ces lieux sont bien plus beaux que ce qu'ils montrent.</p>
+        <p>Le Studio est né de là. On séjourne sur place, on rencontre ceux qui font vivre le lieu, on regarde le territoire autour. Puis on raconte, en photo, en vidéo et en mots, avec un objectif simple : que les voyageurs aient envie de venir et réservent chez vous, en direct.</p>
+        <p>Derrière, une équipe d'experts de l'hospitalité, aux quatre coins de la France, et un média voyage qui diffuse vos histoires. Rien n'est généré. Tout a été vécu.</p>
+      </div>
+      <p class="sign">L'équipe du Studio</p>
+    </div>
+  </div>
+</section>
+
+<!-- DOSSIER -->
+<section class="dossier grain" id="dossier">
+  <div class="wrap">
+    <span class="rub"><span class="star">✶</span> Le dossier</span>
+    <h2>Votre lieu est plus beau <span class="serif">que vos images.</span></h2>
+    <div class="posters">
+      <div class="poster"><span class="big">01</span><h3>Des photos qui ne disent pas tout</h3><p>Prises au téléphone ou il y a cinq ans, elles montrent des chambres, pas un séjour : ni l'accueil, ni la table, ni la lumière du soir.</p></div>
+      <div class="poster"><span class="big">02</span><h3>Les plateformes gardent la relation</h3><p>Les commissions pèsent sur la marge, et vos clients ne vous connaissent qu'à travers une fiche standard.</p></div>
+      <div class="poster"><span class="big">03</span><h3>Pas le temps de raconter</h3><p>La saison avale tout. Le site, les réseaux et la newsletter passent toujours après.</p></div>
+    </div>
+    <div class="answer">
+      <p>Notre réponse : un récit vrai de votre lieu, pensé pour donner envie et pour ramener la réservation chez vous.</p>
+      <a class="btn" href="#carte">Voir la carte</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONSEILS -->
+<section class="wrap" id="conseils">
+  <div class="conseils-head">
+    <div><span class="rub"><span class="star">✶</span> Conseils</span>
+    <h2>À lire, <span class="serif">à garder.</span></h2></div>
+    <p class="chapo" style="max-width:26rem">Des conseils concrets, tirés du terrain, pour les hébergeurs qui veulent mieux raconter et mieux vendre.</p>
+  </div>
+  <div class="articles">
+    <article class="art lead">
+      <div class="vis v1"><span class="tagline">Hors saison</span></div>
+      <span class="cat">Stratégie · 5 min</span>
+      <h3>Remplir l'hiver : six semaines pour préparer le printemps</h3>
+      <p class="dek">Les voyageurs choisissent leurs séjours de printemps pendant l'hiver. Ce que vous montrez maintenant décide de vos réservations d'avril.</p>
+      <details><summary>Lire le conseil ✶</summary>
+        <ol>
+          <li><b>Semaines 1 et 2 :</b> faites le point sur vos images. Celles qui datent ou qui ne montrent que les chambres sont à refaire.</li>
+          <li><b>Semaines 3 et 4 :</b> créez une ou deux offres de séjour liées au territoire (une balade, une table, un artisan), plus parlantes qu'une simple nuitée.</li>
+          <li><b>Semaine 5 :</b> mettez à jour votre site, votre fiche Google et vos annonces avec les mêmes images et les mêmes mots.</li>
+          <li><b>Semaine 6 :</b> écrivez à vos anciens clients. Une newsletter sincère, avec une offre réservée en direct, fait souvent mieux qu'une publicité.</li>
+        </ol>
+      </details>
+    </article>
+    <article class="art">
+      <div class="vis v2"><span class="tagline">Photo</span></div>
+      <span class="cat">Image · 3 min</span>
+      <h3>Les cinq photos que chaque lieu devrait avoir</h3>
+      <details><summary>Lire le conseil ✶</summary>
+        <ol>
+          <li>L'arrivée : ce que le voyageur voit en premier.</li>
+          <li>Un détail qui vous ressemble : une tasse, un tissu, une poignée de porte.</li>
+          <li>Un moment vécu : le petit-déjeuner servi, un livre ouvert au soleil.</li>
+          <li>Le territoire : la vue, le village, le chemin d'à côté.</li>
+          <li>Vous : l'accueil est souvent ce que vos clients retiennent le plus.</li>
+        </ol>
+      </details>
+    </article>
+    <article class="art">
+      <div class="vis v3"><span class="tagline">Réservation directe</span></div>
+      <span class="cat">Vente · 4 min</span>
+      <h3>Quatre leviers simples pour réserver en direct</h3>
+      <details><summary>Lire le conseil ✶</summary>
+        <ol>
+          <li>Un bouton « Réserver » visible sur chaque page de votre site.</li>
+          <li>Un avantage réservé au direct : un petit-déjeuner, un départ tardif, un accueil local.</li>
+          <li>La même photo principale partout, pour qu'on vous reconnaisse d'un canal à l'autre.</li>
+          <li>Un email après le séjour, qui invite à revenir en réservant chez vous.</li>
+        </ol>
+      </details>
+    </article>
+    <article class="art">
+      <div class="vis v4"><span class="tagline">Google</span></div>
+      <span class="cat">Visibilité · 3 min</span>
+      <h3>Votre fiche Google, votre première vitrine</h3>
+      <details><summary>Lire le conseil ✶</summary>
+        <ul>
+          <li>Des photos récentes, ajoutées régulièrement.</li>
+          <li>Une description qui parle du séjour, pas seulement des équipements.</li>
+          <li>Une réponse à chaque avis, même court.</li>
+          <li>Le lien vers votre site, pas vers une plateforme.</li>
+        </ul>
+      </details>
+    </article>
+    <article class="art">
+      <div class="vis v5"><span class="tagline">Accueil</span></div>
+      <span class="cat">Fidélité · 3 min</span>
+      <h3>Le livret d'accueil qui fait revenir</h3>
+      <details><summary>Lire le conseil ✶</summary>
+        <ul>
+          <li>Vos adresses à vous, avec une phrase sur chacune.</li>
+          <li>Une balade à faire depuis le lieu, sans voiture si possible.</li>
+          <li>L'histoire de la maison en quelques lignes.</li>
+          <li>Une invitation à revenir, avec l'avantage du direct.</li>
+        </ul>
+      </details>
+    </article>
+  </div>
+</section>
+
+<!-- PORTRAITS -->
+<section class="portraits grain" id="portraits">
+  <div class="wrap">
+    <span class="rub"><span class="star">✶</span> Portraits</span>
+    <h2>Ils nous ont ouvert <span class="serif">leurs portes.</span></h2>
+    <div class="refs">
+      <article class="ref"><div class="vis v1"></div><div class="txt"><span class="place">Ardèche</span><h3>Le C4</h3><p>Restaurant et gîtes. Communication, refonte du site, contenus.</p></div></article>
+      <article class="ref"><div class="vis v3"></div><div class="txt"><span class="place">Camargue</span><h3>Le Mas du Couvin</h3><p>Reportage publié sur Voyage avec Vue.</p></div></article>
+      <article class="ref"><div class="vis v5"></div><div class="txt"><span class="place">Plein air</span><h3>La Castillonderie</h3><p>Capsules vidéo et lignes éditoriales.</p></div></article>
+      <article class="ref"><div class="vis v2"></div><div class="txt"><span class="place">Plein air</span><h3>La Clairière</h3><p>Reportage photo et accompagnement.</p></div></article>
+    </div>
+    <p class="press">Et aussi : photographie pour le groupe Pierre et Vacances · Maeva, partenariat éditorial avec le magazine Trait Déco.</p>
+  </div>
+</section>
+
+<!-- LA CARTE -->
+<section class="wrap" id="carte">
+  <span class="rub"><span class="star">✶</span> La carte</span>
+  <h2>Trois formules, <span class="serif">un seul interlocuteur.</span></h2>
+  <div class="offers">
+    <article class="offer">
+      <div class="head"><h3>Récit</h3><p class="for">Pour montrer votre lieu tel qu'on le vit.</p></div>
+      <ul>
+        <li>Shooting photo : 100 images, de quoi tenir environ 12 mois</li>
+        <li>Vidéos et capsules immersives, formats verticaux ou paysage</li>
+        <li>Direction artistique et storytelling</li>
+        <li>Un portrait publié sur Voyage avec Vue</li>
+      </ul>
+      <p class="price">Dès 890 € HT <span>selon durée et formats</span></p>
+    </article>
+    <article class="offer">
+      <div class="head"><h3>Saison</h3><p class="for">Pour une communication suivie toute l'année.</p></div>
+      <ul>
+        <li>Planning éditorial et réseaux sociaux</li>
+        <li>Newsletters et emails de réservation</li>
+        <li>Livret d'accueil, mises à jour des plateformes, articles</li>
+        <li>Deux tournages par an</li>
+      </ul>
+      <p class="price">Dès 390 € HT / mois <span>3 mois minimum</span></p>
+    </article>
+    <article class="offer">
+      <div class="head"><h3>Stratégie</h3><p class="for">Pour vendre mieux et trouver de nouvelles réservations.</p></div>
+      <ul>
+        <li>Audit de positionnement et stratégie marketing</li>
+        <li>Offres de séjour et d'événements</li>
+        <li>Partenariats avec agences et réceptifs</li>
+        <li>Prise en charge des demandes de devis</li>
+      </ul>
+      <p class="price">Sur devis <span>6 mois minimum</span></p>
+    </article>
+  </div>
+  <div class="entry">
+    <div><h3>On commence par un diagnostic</h3><p>20 minutes offertes pour regarder ensemble vos images, vos annonces et vos canaux de réservation. Vous repartez avec trois pistes concrètes, que vous travailliez avec nous ou non.</p></div>
+    <a class="btn" href="#redaction">Je réserve mon diagnostic</a>
+  </div>
+</section>
+
+<!-- PROMESSES -->
+<section class="promises" id="promesses">
+  <div class="wrap">
+    <span class="rub"><span class="star">✶</span> Nos promesses</span>
+    <h2>Ce qu'on s'engage <span class="serif">à faire.</span></h2>
+    <ul class="plist">
+      <li><span class="s">✶</span><div><b>On vient sur place</b><span>Pas de récit sans séjour. On découvre le lieu et son territoire avant de le raconter.</span></div></li>
+      <li><span class="s">✶</span><div><b>Un devis clair avant de démarrer</b><span>Vous savez ce que vous payez et ce que vous recevez, sans surprise.</span></div></li>
+      <li><span class="s">✶</span><div><b>Des contenus prêts à publier</b><span>Formats adaptés à votre site, Google, Instagram et vos annonces.</span></div></li>
+      <li><span class="s">✶</span><div><b>Rien de généré</b><span>Des vraies images, des vrais gens, des textes écrits par des journalistes.</span></div></li>
+      <li><span class="s">✶</span><div><b>Un seul interlocuteur</b><span>Une personne suit votre projet du premier échange à la mise en ligne.</span></div></li>
+      <li><span class="s">✶</span><div><b>Partout en France</b><span>Une équipe répartie sur le territoire, qui se déplace là où vous êtes.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section class="agenda grain" id="agenda">
+  <div class="wrap">
+    <span class="rub"><span class="star">✶</span> Agenda</span>
+    <h2>Les tournées <span class="serif">de l'hiver.</span></h2>
+    <div class="dates">
+      <div class="date"><span class="datebar">Janvier 2027</span><div><h3>Tournée n°1</h3><p>Région annoncée prochainement · créneaux limités</p></div><a class="btn" href="#redaction">Réserver</a></div>
+      <div class="date"><span class="datebar">Février 2027</span><div><h3>Tournée n°2</h3><p>Région annoncée prochainement · créneaux limités</p></div><a class="btn" href="#redaction">Réserver</a></div>
+      <div class="date"><span class="datebar">Mars 2027</span><div><h3>Tournée n°3</h3><p>Région annoncée prochainement · créneaux limités</p></div><a class="btn" href="#redaction">Réserver</a></div>
+    </div>
+    <p class="chapo">On regroupe plusieurs lieux d'une même région sur une semaine : les frais de déplacement sont partagés, et vos contenus sont prêts avant le printemps.</p>
+  </div>
+</section>
+
+<!-- COURRIER -->
+<section class="wrap" id="courrier">
+  <span class="rub"><span class="star">✶</span> Courrier</span>
+  <h2>Vos questions, <span class="serif">nos réponses.</span></h2>
+  <div class="letters">
+    <div class="letter"><p class="q">C'est un vrai budget pour une petite maison d'hôtes.</p><p class="from">Question fréquente</p><p class="a"><b>Réponse</b>Chaque réservation qui revient en direct, c'est une commission en moins. Le diagnostic sert justement à faire ce calcul avec vos propres chiffres.</p></div>
+    <div class="letter"><p class="q">J'ai déjà des photos, ça ne suffit pas ?</p><p class="from">Question fréquente</p><p class="a"><b>Réponse</b>Peut-être que si. On les regarde ensemble pendant le diagnostic, et si elles font le travail, on vous le dit.</p></div>
+    <div class="letter"><p class="q">L'hiver, je n'ai pas la tête à ça.</p><p class="from">Question fréquente</p><p class="a"><b>Réponse</b>C'est pourtant le meilleur moment : le lieu est calme et on s'occupe de tout. Il suffit de nous ouvrir la porte.</p></div>
+    <div class="letter"><p class="q">Vous venez aussi chez nous ?</p><p class="from">Question fréquente</p><p class="a"><b>Réponse</b>Oui. L'équipe est répartie aux quatre coins de la France et se déplace partout.</p></div>
+  </div>
+</section>
+
+<!-- REDACTION -->
+<section class="redac grain" id="redaction">
+  <div class="wrap">
+    <span class="rub"><span class="star">✶</span> La rédaction</span>
+    <h2>Parlons <span class="serif">de votre lieu.</span></h2>
+    <form class="form" id="leadForm">
+      <label for="f-name">Votre établissement<input id="f-name" name="name" required></label>
+      <label for="f-type">Type de lieu<select id="f-type" name="type"><option>Hôtel</option><option>Gîte</option><option>Chambres d'hôtes</option><option>Camping</option><option>Groupe hôtelier</option></select></label>
+      <label for="f-rooms">Chambres ou hébergements<input id="f-rooms" name="rooms" inputmode="numeric"></label>
+      <label for="f-need">Votre besoin<select id="f-need" name="need"><option>Des images et des vidéos</option><option>Une communication à l'année</option><option>Vendre davantage en direct</option><option>Je ne sais pas encore</option></select></label>
+      <label for="f-when">Quand ?<select id="f-when" name="when"><option>Cet hiver</option><option>Printemps 2027</option><option>Plus tard</option></select></label>
+      <label for="f-mail">Email<input id="f-mail" name="mail" type="email" required></label>
+      <label for="f-msg" class="full">Racontez-nous votre lieu en quelques mots<textarea id="f-msg" name="msg"></textarea></label>
+      <div class="full"><button class="btn" type="submit">Envoyer à la rédaction ✶</button></div>
+      <p class="sent" id="sent" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><span class="logo">VAV</span> <small>Le Studio · Voyage avec Vue</small></div>
+    <p>Rien n'est généré. Tout a été vécu.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById("leadForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  document.getElementById("sent").textContent = "Maquette : sur le site final, votre demande arrivera directement à la rédaction du Studio.";
+});
+</script>
+
+</body>
+</html>
