@@ -178,24 +178,48 @@ footer p{font-family:var(--serif);font-style:italic;font-size:1.35rem}
 footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-transform:uppercase;letter-spacing:.14em}
 
 /* CODE COULEUR : une couleur par rubrique, reprise dans le sommaire, l'étiquette et le fond */
-:root{--c-edito:#F4B6CC; --c-dossier:#F5AE94; --c-conseils:#F5DE8F; --c-portraits:#BFDCC4; --c-carte:#BCD6EC; --c-promesses:#F4B6CC; --c-agenda:#D5C8EE; --c-courrier:#F9D3DF; --c-redac:#F5AE94}
+:root{--c-edito:#F4B6CC; --c-dossier:#F5AE94; --c-conseils:#F5DE8F; --c-portraits:#BFDCC4; --c-carte:#BCD6EC; --c-promesses:#F4B6CC; --c-agenda:#D5C8EE; --c-eco:#BFE3DD; --c-courrier:#F9D3DF; --c-redac:#F5AE94}
 #edito{--c:var(--c-edito)} #dossier{--c:var(--c-dossier)} #conseils{--c:var(--c-conseils)} #portraits{--c:var(--c-portraits)}
-#carte{--c:var(--c-carte)} #promesses{--c:var(--c-promesses)} #agenda{--c:var(--c-agenda)} #courrier{--c:var(--c-courrier)} #redaction{--c:var(--c-redac)}
-#edito,#conseils,#carte,#courrier{background:var(--c);box-shadow:0 0 0 100vmax var(--c);clip-path:inset(0 -100vmax)}
+#carte{--c:var(--c-carte)} #ecosysteme{--c:var(--c-eco)} #promesses{--c:var(--c-promesses)} #agenda{--c:var(--c-agenda)} #courrier{--c:var(--c-courrier)} #redaction{--c:var(--c-redac)}
+#edito,#conseils,#carte,#courrier,#ecosysteme{background:var(--c);box-shadow:0 0 0 100vmax var(--c);clip-path:inset(0 -100vmax)}
 .dossier{background:var(--c-dossier)} .portraits{background:var(--c-portraits)} .agenda{background:var(--c-agenda)}
 .redac{background:linear-gradient(165deg,var(--c-edito),var(--c-dossier))}
 .rub{background:var(--ink);color:var(--c,var(--cream))}
 .rub .star{color:var(--c,var(--cream))}
 .promises .rub{background:var(--c-promesses);color:var(--ink)}
-.toc li:nth-child(1) .n{color:var(--c-edito)} .toc li:nth-child(2) .n{color:var(--c-dossier)} .toc li:nth-child(3) .n{color:var(--c-conseils)} .toc li:nth-child(4) .n{color:var(--c-portraits)}
-.toc li:nth-child(5) .n{color:var(--c-carte)} .toc li:nth-child(6) .n{color:var(--c-promesses)} .toc li:nth-child(7) .n{color:var(--c-agenda)} .toc li:nth-child(8) .n{color:var(--c-redac)}
-.toc li{border-left:6px solid transparent;padding-left:.7rem}
-.toc li:nth-child(1){border-color:var(--c-edito)} .toc li:nth-child(2){border-color:var(--c-dossier)} .toc li:nth-child(3){border-color:var(--c-conseils)} .toc li:nth-child(4){border-color:var(--c-portraits)}
-.toc li:nth-child(5){border-color:var(--c-carte)} .toc li:nth-child(6){border-color:var(--c-promesses)} .toc li:nth-child(7){border-color:var(--c-agenda)} .toc li:nth-child(8){border-color:var(--c-redac)}
+.toc li{border-left:6px solid var(--c);padding-left:.7rem}
+.toc li .n{color:var(--c)}
 .cover{background:linear-gradient(165deg,var(--c-edito) 0%,var(--c-edito) 45%,var(--c-dossier) 100%)}
 .art,.case{border-top-color:var(--ink)}
 .offer:nth-child(1){--h:var(--c-edito)} .offer:nth-child(2){--h:var(--c-conseils)} .offer:nth-child(3){--h:var(--c-portraits)}
 .letter{background:#FFFFFF} .letter:nth-child(even){background:var(--c-carte)}
+
+
+/* ECOSYSTEME */
+.eco-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:2.5rem}
+.pillar-card{min-width:0;border:3px solid var(--ink);background:var(--cream);padding:1.4rem 1.4rem 1.6rem;display:flex;flex-direction:column;gap:.6rem}
+.pillar-card .role{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:.95rem;color:var(--deep)}
+.pillar-card h3{font-size:2.2rem}
+.pillar-card ul{margin:.2rem 0 0;padding-left:1.1rem;display:grid;gap:.35rem;font-size:.98rem}
+.eco-center{margin-top:1.25rem;background:var(--ink);color:var(--cream);padding:1.5rem 1.8rem;display:flex;flex-wrap:wrap;gap:.6rem 2rem;align-items:center;justify-content:space-between}
+.eco-center h3{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--c-eco)}
+.eco-center p{font-family:var(--serif);font-size:1.45rem;line-height:1.25;max-width:36rem}
+/* PREUVES */
+.proofs{background:var(--ink);color:var(--cream);padding-block:2.75rem}
+.proofs ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem}
+.proofs li{min-width:0;border-top:2px solid #FBF6EF55;padding-top:.8rem}
+.proofs b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(2rem,4.6vw,3.2rem);line-height:1;color:var(--c-conseils)}
+.proofs span{display:block;font-family:var(--serif);font-size:1.15rem;line-height:1.3;margin-top:.35rem}
+/* PARCOURS */
+.offer .step{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:.95rem}
+.sub{padding:1rem 1.3rem;border-bottom:2px solid var(--ink)}
+.sub:last-of-type{border-bottom:0}
+.sub h4{margin:0;font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.45rem;line-height:1}
+.sub p{font-size:.97rem;margin-top:.35rem}
+.sub .tarif{margin-top:.55rem;font-family:var(--display);text-transform:uppercase;font-size:1.1rem;letter-spacing:.03em}
+.offer .head h3{font-size:2.6rem}
+@media (max-width:900px){.eco-grid{grid-template-columns:1fr}.proofs ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.proofs ul{grid-template-columns:1fr}}
 
 @media (max-width:900px){
   .cover-grid,.edito{grid-template-columns:1fr}
@@ -238,7 +262,7 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
       </div>
       <ul class="coverlines">
         <li><b>Hors saison</b><span>Remplir l'hiver sans tout miser sur les plateformes</span></li>
-        <li><b>Photo</b><span>Les images qui manquent à presque tous les hébergeurs</span></li>
+        <li><b>Média</b><span>Votre adresse portée par Voyage avec Vue et ses relais</span></li>
         <li><b>Portraits</b><span>Ils nous ont ouvert leurs portes</span></li>
       </ul>
     </div>
@@ -249,14 +273,14 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
 <nav class="toc" aria-label="Sommaire">
   <div class="wrap">
     <ol>
-      <li><a href="#edito"><span class="n">01</span><span class="t">Édito<i>Pourquoi on fait ça</i></span></a></li>
-      <li><a href="#dossier"><span class="n">02</span><span class="t">Le dossier<i>Votre lieu, vos images</i></span></a></li>
-      <li><a href="#conseils"><span class="n">03</span><span class="t">Conseils<i>À lire, à garder</i></span></a></li>
-      <li><a href="#portraits"><span class="n">04</span><span class="t">Portraits<i>Lieux racontés</i></span></a></li>
-      <li><a href="#carte"><span class="n">05</span><span class="t">La carte<i>Nos formules</i></span></a></li>
-      <li><a href="#promesses"><span class="n">06</span><span class="t">Nos promesses<i>Ce qu'on s'engage à faire</i></span></a></li>
-      <li><a href="#agenda"><span class="n">07</span><span class="t">Agenda<i>Les tournées</i></span></a></li>
-      <li><a href="#redaction"><span class="n">08</span><span class="t">La rédaction<i>Nous écrire</i></span></a></li>
+      <li style="--c:var(--c-edito)"><a href="#edito"><span class="n">01</span><span class="t">Édito<i>Pourquoi on fait ça</i></span></a></li>
+      <li style="--c:var(--c-dossier)"><a href="#dossier"><span class="n">02</span><span class="t">Le dossier<i>Votre lieu, vos images</i></span></a></li>
+      <li style="--c:var(--c-eco)"><a href="#ecosysteme"><span class="n">03</span><span class="t">L'écosystème<i>Un média, un studio, un club</i></span></a></li>
+      <li style="--c:var(--c-conseils)"><a href="#conseils"><span class="n">04</span><span class="t">Conseils<i>À lire, à garder</i></span></a></li>
+      <li style="--c:var(--c-portraits)"><a href="#portraits"><span class="n">05</span><span class="t">Portraits<i>Lieux racontés</i></span></a></li>
+      <li style="--c:var(--c-carte)"><a href="#carte"><span class="n">06</span><span class="t">Le parcours<i>Rejoindre, révéler, grandir</i></span></a></li>
+      <li style="--c:var(--c-agenda)"><a href="#agenda"><span class="n">07</span><span class="t">Agenda<i>Les tournées</i></span></a></li>
+      <li style="--c:var(--c-redac)"><a href="#redaction"><span class="n">08</span><span class="t">La rédaction<i>Nous écrire</i></span></a></li>
     </ol>
   </div>
 </nav>
@@ -289,10 +313,57 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
     </div>
     <div class="answer">
       <p>Notre réponse : un récit vrai de votre lieu, pensé pour donner envie et pour ramener la réservation chez vous.</p>
-      <a class="btn" href="#carte">Voir la carte</a>
+      <a class="btn" href="#carte">Voir le parcours</a>
     </div>
   </div>
 </section>
+
+<!-- ECOSYSTEME -->
+<section class="wrap" id="ecosysteme">
+  <span class="rub"><span class="star">✶</span> L'écosystème</span>
+  <h2>Un média, un studio, <span class="serif">un club.</span></h2>
+  <p class="chapo">Une seule équipe pour révéler votre adresse, la raconter et la faire connaître. Chacun son rôle, tous au service de votre lieu.</p>
+  <div class="eco-grid">
+    <article class="pillar-card">
+      <span class="role">Faire connaître</span>
+      <h3>Le média</h3>
+      <p>Voyage avec Vue devient le porte-parole de votre adresse : reportages, newsletter, réseaux, et des relais dans la presse.</p>
+    </article>
+    <article class="pillar-card">
+      <span class="role">Révéler et raconter</span>
+      <h3>Le Studio</h3>
+      <p>Une équipe d'experts seniors de l'hospitalité et de la communication :</p>
+      <ul>
+        <li>Conseil, commercialisation et stratégie</li>
+        <li>Journalisme et rédaction</li>
+        <li>Photo, vidéo et drone</li>
+        <li>Direction artistique et destinations dessinées</li>
+        <li>Relations presse</li>
+      </ul>
+    </article>
+    <article class="pillar-card">
+      <span class="role">Relier</span>
+      <h3>Le Club VAV</h3>
+      <p>Les marques voyage de notre écosystème, mises en avant auprès de notre communauté et de nos adresses.</p>
+    </article>
+  </div>
+  <div class="eco-center">
+    <h3>Au centre : votre adresse</h3>
+    <p>La même équipe la révèle, la raconte et la fait connaître.</p>
+  </div>
+</section>
+
+<!-- PREUVES -->
+<div class="proofs" role="region" aria-label="Nos chiffres et relais">
+  <div class="wrap">
+    <ul>
+      <li><b>≈ 500 000</b><span>visiteurs uniques par an sur Voyage avec Vue</span></li>
+      <li><b>42 %</b><span>d'ouverture pour notre newsletter</span></li>
+      <li><b>L'Opinion · Trait Déco</b><span>nos relais éditoriaux dans la presse</span></li>
+      <li><b>Membre ATR</b><span>Agir pour un Tourisme Responsable</span></li>
+    </ul>
+  </div>
+</div>
 
 <!-- CONSEILS -->
 <section class="wrap" id="conseils">
@@ -388,38 +459,23 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
 
 <!-- LA CARTE -->
 <section class="wrap" id="carte">
-  <span class="rub"><span class="star">✶</span> La carte</span>
-  <h2>Trois formules, <span class="serif">un seul interlocuteur.</span></h2>
+  <span class="rub"><span class="star">✶</span> Le parcours</span>
+  <h2>Rejoindre, révéler, <span class="serif">faire grandir.</span></h2>
+  <p class="chapo">On avance avec chaque adresse à son rythme. Trois étapes, un seul interlocuteur.</p>
   <div class="offers">
     <article class="offer">
-      <div class="head"><h3>Récit</h3><p class="for">Pour montrer votre lieu tel qu'on le vit.</p></div>
-      <ul>
-        <li>Shooting photo : 100 images, de quoi tenir environ 12 mois</li>
-        <li>Vidéos et capsules immersives, formats verticaux ou paysage</li>
-        <li>Direction artistique et storytelling</li>
-        <li>Un portrait publié sur Voyage avec Vue</li>
-      </ul>
-      <p class="price">Dès 890 € HT <span>selon durée et formats</span></p>
+      <div class="head"><span class="step">Étape 1</span><h3>Rejoindre</h3><p class="for">Entrer dans l'écosystème Voyage avec Vue.</p></div>
+      <div class="sub"><h4>La Collection</h4><p>Votre adresse rejoint la sélection de Voyage avec Vue et devient visible auprès de son audience.</p><p class="tarif">420 € HT / an</p></div>
     </article>
     <article class="offer">
-      <div class="head"><h3>Saison</h3><p class="for">Pour une communication suivie toute l'année.</p></div>
-      <ul>
-        <li>Planning éditorial et réseaux sociaux</li>
-        <li>Newsletters et emails de réservation</li>
-        <li>Livret d'accueil, mises à jour des plateformes, articles</li>
-        <li>Deux tournages par an</li>
-      </ul>
-      <p class="price">Dès 390 € HT / mois <span>3 mois minimum</span></p>
+      <div class="head"><span class="step">Étape 2</span><h3>Révéler</h3><p class="for">Montrer votre lieu tel qu'on le vit.</p></div>
+      <div class="sub"><h4>Raconter le lieu</h4><p>Reportage photo, vidéos et capsules, récit écrit, portrait publié sur Voyage avec Vue.</p><p class="tarif">Sur devis</p></div>
+      <div class="sub"><h4>Destinations dessinées</h4><p>Votre lieu et son territoire racontés par le dessin.</p><p class="tarif">Sur devis</p></div>
     </article>
     <article class="offer">
-      <div class="head"><h3>Stratégie</h3><p class="for">Pour vendre mieux et trouver de nouvelles réservations.</p></div>
-      <ul>
-        <li>Audit de positionnement et stratégie marketing</li>
-        <li>Offres de séjour et d'événements</li>
-        <li>Partenariats avec agences et réceptifs</li>
-        <li>Prise en charge des demandes de devis</li>
-      </ul>
-      <p class="price">Sur devis <span>6 mois minimum</span></p>
+      <div class="head"><span class="step">Étape 3</span><h3>Faire grandir</h3><p class="for">Communiquer toute l'année et vendre mieux.</p></div>
+      <div class="sub"><h4>Accompagnement</h4><p>Planning éditorial, réseaux sociaux, newsletters, livret d'accueil et mises à jour des plateformes.</p><p class="tarif">Sur devis</p></div>
+      <div class="sub"><h4>Stratégie et marge</h4><p>Positionnement, offres de séjour, partenariats avec agences et réceptifs, suivi des demandes.</p><p class="tarif">Sur devis</p></div>
     </article>
   </div>
   <div class="entry">
