@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
 <title>Le Studio · Voyage avec Vue</title>
 <meta name="description" content="Le studio de Voyage avec Vue raconte les hôtels, gîtes et maisons d’hôtes en photo, vidéo et récit, et les aide à réserver en direct.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -175,6 +176,26 @@ footer .logo{font-family:var(--display);font-size:2.6rem;line-height:1}
 footer .logo .o{display:inline-block;width:.6em;height:.6em;border-radius:50%;border:.12em solid var(--cream);vertical-align:.02em}
 footer p{font-family:var(--serif);font-style:italic;font-size:1.35rem}
 footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-transform:uppercase;letter-spacing:.14em}
+
+/* CODE COULEUR : une couleur par rubrique, reprise dans le sommaire, l'étiquette et le fond */
+:root{--c-edito:#F4B6CC; --c-dossier:#F5AE94; --c-conseils:#F5DE8F; --c-portraits:#BFDCC4; --c-carte:#BCD6EC; --c-promesses:#F4B6CC; --c-agenda:#D5C8EE; --c-courrier:#F9D3DF; --c-redac:#F5AE94}
+#edito{--c:var(--c-edito)} #dossier{--c:var(--c-dossier)} #conseils{--c:var(--c-conseils)} #portraits{--c:var(--c-portraits)}
+#carte{--c:var(--c-carte)} #promesses{--c:var(--c-promesses)} #agenda{--c:var(--c-agenda)} #courrier{--c:var(--c-courrier)} #redaction{--c:var(--c-redac)}
+#edito,#conseils,#carte,#courrier{background:var(--c);box-shadow:0 0 0 100vmax var(--c);clip-path:inset(0 -100vmax)}
+.dossier{background:var(--c-dossier)} .portraits{background:var(--c-portraits)} .agenda{background:var(--c-agenda)}
+.redac{background:linear-gradient(165deg,var(--c-edito),var(--c-dossier))}
+.rub{background:var(--ink);color:var(--c,var(--cream))}
+.rub .star{color:var(--c,var(--cream))}
+.promises .rub{background:var(--c-promesses);color:var(--ink)}
+.toc li:nth-child(1) .n{color:var(--c-edito)} .toc li:nth-child(2) .n{color:var(--c-dossier)} .toc li:nth-child(3) .n{color:var(--c-conseils)} .toc li:nth-child(4) .n{color:var(--c-portraits)}
+.toc li:nth-child(5) .n{color:var(--c-carte)} .toc li:nth-child(6) .n{color:var(--c-promesses)} .toc li:nth-child(7) .n{color:var(--c-agenda)} .toc li:nth-child(8) .n{color:var(--c-redac)}
+.toc li{border-left:6px solid transparent;padding-left:.7rem}
+.toc li:nth-child(1){border-color:var(--c-edito)} .toc li:nth-child(2){border-color:var(--c-dossier)} .toc li:nth-child(3){border-color:var(--c-conseils)} .toc li:nth-child(4){border-color:var(--c-portraits)}
+.toc li:nth-child(5){border-color:var(--c-carte)} .toc li:nth-child(6){border-color:var(--c-promesses)} .toc li:nth-child(7){border-color:var(--c-agenda)} .toc li:nth-child(8){border-color:var(--c-redac)}
+.cover{background:linear-gradient(165deg,var(--c-edito) 0%,var(--c-edito) 45%,var(--c-dossier) 100%)}
+.art,.case{border-top-color:var(--ink)}
+.offer:nth-child(1){--h:var(--c-edito)} .offer:nth-child(2){--h:var(--c-conseils)} .offer:nth-child(3){--h:var(--c-portraits)}
+.letter{background:#FFFFFF} .letter:nth-child(even){background:var(--c-carte)}
 
 @media (max-width:900px){
   .cover-grid,.edito{grid-template-columns:1fr}
