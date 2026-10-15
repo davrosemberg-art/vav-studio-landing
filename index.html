@@ -221,6 +221,20 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
 @media (max-width:900px){.eco-grid{grid-template-columns:1fr}.proofs ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:480px){.proofs ul{grid-template-columns:1fr}}
 
+/* EN IMAGES : emplacements pour les photos et vidéos de tournage */
+.gal-head{margin-top:3rem;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.5rem 1.5rem;border-top:3px solid var(--ink);padding-top:1rem}
+.gal-head h3{font-size:clamp(2rem,5vw,3rem)}
+.gal-head p{font-family:var(--serif);font-size:1.25rem;max-width:30rem}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-flow:dense;gap:1rem;margin-top:1.5rem}
+.slot{margin:0;position:relative;aspect-ratio:4/5;max-width:100%;background:repeating-linear-gradient(135deg,#FFFFFF66 0 12px,transparent 12px 24px),var(--cream);border:3px dashed var(--ink);display:flex;align-items:flex-end;min-width:0}
+.slot.wide{grid-column:span 2;aspect-ratio:auto;min-height:100%}
+.slot.video{background:repeating-linear-gradient(135deg,#FFFFFF33 0 12px,transparent 12px 24px),var(--ink)}
+.slot figcaption{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:.95rem;padding:.6rem .8rem;background:var(--ink);color:var(--cream);width:100%}
+.slot.video figcaption{background:var(--cream);color:var(--ink)}
+.play{position:absolute;inset:0;margin:auto;width:4rem;height:4rem;border-radius:50%;border:3px solid var(--cream);display:grid;place-items:center}
+.play::after{content:"";border-style:solid;border-width:.7rem 0 .7rem 1.15rem;border-color:transparent transparent transparent var(--cream);margin-left:.3rem}
+@media (max-width:900px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.slot.wide{grid-column:span 2;aspect-ratio:16/9;min-height:0}}
+
 @media (max-width:900px){
   .cover-grid,.edito{grid-template-columns:1fr}
   .toc ol{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -263,7 +277,7 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
       <ul class="coverlines">
         <li><b>Hors saison</b><span>Remplir l'hiver sans tout miser sur les plateformes</span></li>
         <li><b>Média</b><span>Votre adresse portée par Voyage avec Vue et ses relais</span></li>
-        <li><b>Portraits</b><span>Ils nous ont ouvert leurs portes</span></li>
+        <li><b>Portraits</b><span>Ils nous ont ouvert leurs portes, en images</span></li>
       </ul>
     </div>
   </div>
@@ -277,7 +291,7 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
       <li style="--c:var(--c-dossier)"><a href="#dossier"><span class="n">02</span><span class="t">Le dossier<i>Votre lieu, vos images</i></span></a></li>
       <li style="--c:var(--c-eco)"><a href="#ecosysteme"><span class="n">03</span><span class="t">L'écosystème<i>Un média, un studio, un club</i></span></a></li>
       <li style="--c:var(--c-conseils)"><a href="#conseils"><span class="n">04</span><span class="t">Conseils<i>À lire, à garder</i></span></a></li>
-      <li style="--c:var(--c-portraits)"><a href="#portraits"><span class="n">05</span><span class="t">Portraits<i>Lieux racontés</i></span></a></li>
+      <li style="--c:var(--c-portraits)"><a href="#portraits"><span class="n">05</span><span class="t">Portraits<i>Lieux et images</i></span></a></li>
       <li style="--c:var(--c-carte)"><a href="#carte"><span class="n">06</span><span class="t">Le parcours<i>Rejoindre, révéler, grandir</i></span></a></li>
       <li style="--c:var(--c-agenda)"><a href="#agenda"><span class="n">07</span><span class="t">Agenda<i>Les tournées</i></span></a></li>
       <li style="--c:var(--c-redac)"><a href="#redaction"><span class="n">08</span><span class="t">La rédaction<i>Nous écrire</i></span></a></li>
@@ -449,10 +463,22 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
     <span class="rub"><span class="star">✶</span> Portraits</span>
     <h2>Ils nous ont ouvert <span class="serif">leurs portes.</span></h2>
     <div class="refs">
-      <article class="ref"><div class="vis v1"></div><div class="txt"><span class="place">Ardèche</span><h3>Le C4</h3><p>Restaurant et gîtes. Communication, refonte du site, contenus.</p></div></article>
-      <article class="ref"><div class="vis v3"></div><div class="txt"><span class="place">Dordogne</span><h3>Domaine de Labarthe</h3><p>Maison d'hôtes.</p></div></article>
+      <article class="ref"><div class="vis v1"></div><div class="txt"><span class="place">Ardèche</span><h3>Le C4</h3></div></article>
+      <article class="ref"><div class="vis v3"></div><div class="txt"><span class="place">Dordogne</span><h3>Domaine de Labarthe</h3></div></article>
       <article class="ref"><div class="vis v5"></div><div class="txt"><span class="place">Saint-Rémy-de-Provence</span><h3>Les Maisons Imaginaires</h3></div></article>
-      <article class="ref"><div class="vis v4"></div><div class="txt"><span class="place">Normandie</span><h3>Youza Ecolodge</h3><p>Écolodge.</p></div></article>
+      <article class="ref"><div class="vis v4"></div><div class="txt"><span class="place">Normandie</span><h3>Youza Ecolodge</h3></div></article>
+    </div>
+    <div class="gal-head">
+      <h3>En images</h3>
+      <p>Extraits de nos tournages : photos et vidéos des lieux qu'on a racontés.</p>
+    </div>
+    <div class="gallery">
+      <figure class="slot video wide"><span class="play" aria-hidden="true"></span><figcaption>Vidéo · film d'un lieu</figcaption></figure>
+      <figure class="slot"><figcaption>Photo · l'arrivée</figcaption></figure>
+      <figure class="slot"><figcaption>Photo · un détail</figcaption></figure>
+      <figure class="slot"><figcaption>Photo · un moment vécu</figcaption></figure>
+      <figure class="slot"><figcaption>Photo · le territoire</figcaption></figure>
+      <figure class="slot video"><span class="play" aria-hidden="true"></span><figcaption>Vidéo · format vertical</figcaption></figure>
     </div>
   </div>
 </section>
