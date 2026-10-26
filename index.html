@@ -2,13 +2,13 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Le Studio de Voyage avec Vue : un média, un studio d'experts et un club au service de l'hôtellerie indépendante.">
+<style>:root{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Le Studio · Voyage avec Vue</title>
-<meta name="description" content="Le studio de Voyage avec Vue raconte les hôtels, gîtes et maisons d’hôtes en photo, vidéo et récit, et les aide à réserver en direct.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
 /* Layout: an independent magazine issue. Cover, sommaire, édito, dossier, conseils, portraits, la carte, agenda, courrier, rédaction. Committed single look: hot pink, tomato red, ink black, paper cream, grain. */
 :root{
@@ -253,16 +253,120 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
   .toc ol{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:no-preference){.btn{transition:transform .12s ease, box-shadow .12s ease}}
+
+
+/* ===== Charte VAV : Outfit (titres capitales très gras, sous-titres gras en bas de casse, texte courant), Space Mono (CTA en capitales, légendes en italique). Sable, encre, abricot, pierre, gris-bleu. ===== */
+:root{
+  --cream:#F7F3EE; --ink:#1F2D2E; --pink:#FDD7A9; --pink-soft:#FBE6CC; --red:#EFE6DA; --sun:#FDD7A9; --sage:#E6E2D6; --sky:#E4EAEB; --deep:#5E7880; --blue:#B3C2C6;
+  --display:"Outfit", "Helvetica Neue", Arial, sans-serif;
+  --body:"Outfit", "Helvetica Neue", Arial, sans-serif;
+  --serif:"Outfit", "Helvetica Neue", Arial, sans-serif;
+  --mono:"Space Mono", ui-monospace, Menlo, monospace;
+  --c-edito:#F7F3EE; --c-dossier:#F2E6D8; --c-conseils:#EFE6DA; --c-portraits:#F2E6D8; --c-carte:#F7F3EE; --c-promesses:#FDD7A9; --c-agenda:#E6E2D6; --c-eco:#E4EAEB; --c-courrier:#F7F3EE; --c-redac:#F2E6D8;
+}
+body{font-weight:400;font-size:1.04rem;line-height:1.6;letter-spacing:0}
+.grain::after{display:none}
+/* titres : capitales très grasses */
+h1,h2,h3,h4{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.02em;line-height:1}
+h2{font-size:clamp(2.2rem,6vw,4.2rem)}
+.cover h1{font-size:clamp(2.4rem,6vw,4.6rem)}
+/* sous-titres : gras, bas de casse, espacés */
+.serif{font-family:var(--display);font-style:normal;font-weight:700;text-transform:none;letter-spacing:.04em}
+.cover h1 .serif{font-size:.62em;margin-top:.5rem}
+.chapo,.dek,.art .dek,.press,.date p,.gal-head p,.proofs span,.eco-center p,.dossier .answer p,footer p,.coverlines span,.toc .t i,.offer .for,.sign,.letter .q{font-family:var(--body);font-style:normal;font-weight:400;letter-spacing:0}
+.chapo{font-weight:300}
+.letter .q{font-weight:500}
+/* CTA, rubriques, navigation : Space Mono en capitales */
+.rub,.topline,.btn,.datebar,.cat,.art .cat,.offer .step,.pillar-card .role,.art summary,.form label,.letter .from,.letter .a b,footer small,.sub .tarif{font-family:var(--mono);font-weight:400;text-transform:uppercase;letter-spacing:.08em}
+.rub{font-size:.78rem;padding:.4rem .7rem}
+.topline{font-size:.78rem;border-bottom-width:1px}
+.btn{font-size:.82rem;padding:1rem 1.5rem;border:1px solid var(--ink);border-radius:0}
+.btn.alt{background:transparent;color:var(--ink)}
+.btn:hover{transform:none;box-shadow:none;background:var(--blue);border-color:var(--blue);color:var(--ink)}
+.btn:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--deep)}
+.sub .tarif{font-size:.85rem}
+/* légendes et petits plus : Space Mono italique */
+.slot figcaption,.ref .place,.vis .tagline{font-family:var(--mono);font-style:italic;font-weight:400;text-transform:none;letter-spacing:0}
+.slot figcaption{font-size:.82rem}
+.vis .tagline{font-size:.86rem;background:var(--cream);color:var(--ink);padding:.25rem .55rem;text-shadow:none}
+/* logo typographique */
+.wm{font-family:var(--display);font-weight:600;letter-spacing:-.03em;text-transform:none;white-space:nowrap}
+.wm i{font-style:italic;font-weight:300;margin:0 .05em}
+.mast .logo{font-size:clamp(3.2rem,10vw,7.6rem);line-height:.95}
+.mast .side{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.02em}
+.mast .side .serif{font-size:.55em}
+footer .logo{font-size:2rem}
+/* couverture : aplat encre */
+.cover{background:var(--ink)!important;color:var(--cream)}
+.cover .topline{border-color:#F7F3EE55}
+.cover .coverlines li{border-top:1px solid #F7F3EE55}
+.coverlines b{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.02em;font-size:1.25rem}
+.cover .btn{background:var(--blue);color:var(--ink);border-color:var(--blue)}
+.cover .btn.alt{background:transparent;color:var(--cream);border-color:var(--cream)}
+.cover .btn:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.burst{clip-path:circle(50%);transform:none;background:var(--pink);color:var(--ink);font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;font-size:.82rem;line-height:1.2}
+/* sommaire */
+.toc .n{font-family:var(--display);font-weight:800;color:var(--pink)}
+.toc .t{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.02em;font-size:1rem}
+.toc li{border-left-width:2px}
+.toc li .n{color:var(--pink)}
+/* filets fins */
+.poster,.offer,.letter,.form,.pillar-card,.ref,.slot{border-width:1px;border-radius:0}
+.poster:nth-child(n){transform:none;background:var(--cream)}
+.poster .big{font-family:var(--display);font-weight:800;color:var(--deep)}
+.coverlines li,.art,.date,.gal-head{border-top-width:1px}
+.offer .head,.offer .price,.sub,.letter .a{border-width:1px}
+.offer .head h3{font-size:2rem}
+.sub h4{font-weight:700;text-transform:none;letter-spacing:.04em;font-size:1.25rem}
+.offer li::before,.art li::marker{color:var(--deep)}
+.art summary{border-bottom:1px solid var(--deep)}
+.entry,.slot{border-style:solid}
+input,select,textarea{border:1px solid var(--ink)}
+.edito .body p:first-child::first-letter{font-family:var(--display);font-weight:800;color:var(--deep)}
+/* blocs sombres */
+.proofs b{font-family:var(--display);font-weight:800;color:var(--pink)}
+.plist b{font-family:var(--display);font-weight:700;text-transform:none;letter-spacing:.04em}
+.plist .s{color:var(--pink)}
+.eco-center h3{color:var(--pink)}
+.dossier .answer .btn{background:var(--blue);border-color:var(--blue);color:var(--ink)}
+.ref{background:var(--ink)}
+.ref .place{color:var(--pink)}
+.letter .a b{color:var(--deep);font-size:.78rem}
+.promises .rub{background:var(--pink);color:var(--ink)}
+.rub{background:var(--ink);color:var(--cream)}
+.rub .star{color:var(--pink)}
+
+
+/* NOS FORMATS */
+.fmts{display:flex;flex-direction:column;gap:1.25rem;margin-top:2.5rem}
+.fmt{display:grid;grid-template-columns:minmax(0,18rem) minmax(0,1fr);gap:1.5rem;align-items:center;border-top:1px solid var(--ink);padding-top:1.25rem}
+.fmt-txt{display:flex;flex-direction:column;gap:.5rem;min-width:0}
+.fmt-txt h3{font-size:1.9rem}
+.fmt-txt p{font-size:.98rem}
+.fmt-txt .where{font-size:.85rem;opacity:.75;font-style:italic}
+.strip{display:flex;gap:.6rem;overflow-x:auto;min-width:0;padding-bottom:.4rem;scrollbar-width:thin}
+.strip .it{margin:0;flex:none;height:300px;max-width:100%;overflow:hidden;background:var(--ink)}
+.strip .it.r45{aspect-ratio:4/5}
+.strip .it.r916{aspect-ratio:9/16}
+.strip img,.strip video{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:760px){.fmt{grid-template-columns:1fr}.strip .it{height:240px}}
+.fmt-txt .where{font-family:var(--mono);font-size:.8rem;opacity:.85}
+.fmt-txt h3{font-size:1.5rem}
+/* MÉDIAS : photos et capsules du C4 */
+.vis,.slot{position:relative;overflow:hidden}
+.fill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.vis .tagline{z-index:1;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.slot.has-media{background:var(--ink)}
+.slot.has-media figcaption{position:relative;z-index:1}
 </style>
 </head>
 <body>
-
 <!-- COVER -->
 <header class="cover grain">
   <div class="wrap">
     <div class="topline"><span>N°01 · Hiver 2026-27</span><span>Photo · vidéo · récit · conseil</span><span>Par Voyage avec Vue</span></div>
     <div class="mast">
-      <div class="logo">VAV</div>
+      <div class="logo"><span class="wm">voyage<i>avec</i>vue</span></div>
       <div class="side">Le Studio<span class="serif">photo, vidéo, récit &amp; conseil</span></div>
     </div>
     <div class="burst" aria-hidden="true">Rien<br>n'est<br>généré</div>
@@ -388,7 +492,7 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
   </div>
   <div class="articles">
     <article class="art lead">
-      <div class="vis v1"><span class="tagline">Hors saison</span></div>
+      <div class="vis v1"><img class="fill" src="img/collines.jpg" alt="Collines et prairie autour du C4, en Ardèche" loading="lazy"><span class="tagline">Hors saison</span></div>
       <span class="cat">Stratégie · 5 min</span>
       <h3>Remplir l'hiver : six semaines pour préparer le printemps</h3>
       <p class="dek">Les voyageurs choisissent leurs séjours de printemps pendant l'hiver. Ce que vous montrez maintenant décide de vos réservations d'avril.</p>
@@ -402,7 +506,7 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
       </details>
     </article>
     <article class="art">
-      <div class="vis v2"><span class="tagline">Photo</span></div>
+      <div class="vis v2"><img class="fill" src="img/mi-fenetre-jardin.jpg" alt="Le jardin des Maisons Imaginaires vu à travers une fenêtre" loading="lazy"><span class="tagline">Photo</span></div>
       <span class="cat">Image · 3 min</span>
       <h3>Les cinq photos que chaque lieu devrait avoir</h3>
       <details><summary>Lire le conseil ✶</summary>
@@ -416,7 +520,7 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
       </details>
     </article>
     <article class="art">
-      <div class="vis v3"><span class="tagline">Réservation directe</span></div>
+      <div class="vis v3"><img class="fill" src="img/labarthe-terrasse.jpg" alt="Terrasse et piscine du Domaine de Labarthe" loading="lazy"><span class="tagline">Réservation directe</span></div>
       <span class="cat">Vente · 4 min</span>
       <h3>Quatre leviers simples pour réserver en direct</h3>
       <details><summary>Lire le conseil ✶</summary>
@@ -429,7 +533,7 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
       </details>
     </article>
     <article class="art">
-      <div class="vis v4"><span class="tagline">Google</span></div>
+      <div class="vis v4"><img class="fill" src="img/labarthe-maison.jpg" alt="La maison et la piscine du Domaine de Labarthe" loading="lazy"><span class="tagline">Google</span></div>
       <span class="cat">Visibilité · 3 min</span>
       <h3>Votre fiche Google, votre première vitrine</h3>
       <details><summary>Lire le conseil ✶</summary>
@@ -442,7 +546,7 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
       </details>
     </article>
     <article class="art">
-      <div class="vis v5"><span class="tagline">Accueil</span></div>
+      <div class="vis v5"><img class="fill" src="img/mi-salon.jpg" alt="Le salon des Maisons Imaginaires sous sa mezzanine" loading="lazy"><span class="tagline">Accueil</span></div>
       <span class="cat">Fidélité · 3 min</span>
       <h3>Le livret d'accueil qui fait revenir</h3>
       <details><summary>Lire le conseil ✶</summary>
@@ -464,9 +568,9 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
     <span class="rub"><span class="star">✶</span> Portraits</span>
     <h2>Ils nous ont ouvert <span class="serif">leurs portes.</span></h2>
     <div class="refs">
-      <article class="ref"><div class="vis v1"></div><div class="txt"><span class="place">Ardèche</span><h3>Le C4</h3></div></article>
-      <article class="ref"><div class="vis v3"></div><div class="txt"><span class="place">Dordogne</span><h3>Domaine de Labarthe</h3></div></article>
-      <article class="ref"><div class="vis v5"></div><div class="txt"><span class="place">Saint-Rémy-de-Provence</span><h3>Les Maisons Imaginaires</h3></div></article>
+      <article class="ref"><div class="vis v1"><img class="fill" src="img/service-terrasse.jpg" alt="Service du petit-déjeuner en terrasse au C4" loading="lazy"></div><div class="txt"><span class="place">Ardèche</span><h3>Le C4</h3></div></article>
+      <article class="ref"><div class="vis v3"><img class="fill" src="img/labarthe-maison-piscine.jpg" alt="Le Domaine de Labarthe et sa piscine" loading="lazy"></div><div class="txt"><span class="place">Dordogne</span><h3>Domaine de Labarthe</h3></div></article>
+      <article class="ref"><div class="vis v5"><img class="fill" src="img/mi-cour.jpg" alt="La cour intérieure des Maisons Imaginaires" loading="lazy"></div><div class="txt"><span class="place">Saint-Rémy-de-Provence</span><h3>Les Maisons Imaginaires</h3></div></article>
       <article class="ref"><div class="vis v4"></div><div class="txt"><span class="place">Normandie</span><h3>Youza Ecolodge</h3></div></article>
     </div>
     <div class="gal-head">
@@ -474,13 +578,38 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
       <p>Extraits de nos tournages : photos et vidéos des lieux qu'on a racontés.</p>
     </div>
     <div class="gallery">
-      <figure class="slot video wide"><span class="play" aria-hidden="true"></span><figcaption>Vidéo · film d'un lieu</figcaption></figure>
-      <figure class="slot"><figcaption>Photo · l'arrivée</figcaption></figure>
-      <figure class="slot"><figcaption>Photo · un détail</figcaption></figure>
-      <figure class="slot"><figcaption>Photo · un moment vécu</figcaption></figure>
-      <figure class="slot"><figcaption>Photo · le territoire</figcaption></figure>
-      <figure class="slot video"><span class="play" aria-hidden="true"></span><figcaption>Vidéo · format vertical</figcaption></figure>
+      <figure class="slot video wide has-media"><video class="fill" src="video/drone-chassezac.mp4" poster="video/drone-chassezac-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Survol des gorges du Chassezac, près du C4"></video><figcaption>Vidéo · le Chassezac vu du ciel</figcaption></figure>
+      <figure class="slot has-media"><img class="fill" src="img/labarthe-porte.jpg" alt="Porte d'entrée fleurie du Domaine de Labarthe" loading="lazy"><figcaption>Photo · l'arrivée</figcaption></figure>
+      <figure class="slot has-media"><img class="fill" src="img/mi-citrons.jpg" alt="Citrons alignés sur une étagère des Maisons Imaginaires" loading="lazy"><figcaption>Photo · un détail</figcaption></figure>
+      <figure class="slot has-media"><img class="fill" src="img/mi-fenetre-main.jpg" alt="Une main ouvre une fenêtre sur la lumière du matin" loading="lazy"><figcaption>Photo · un moment vécu</figcaption></figure>
+      <figure class="slot has-media"><video class="fill" src="video/canoe.mp4" poster="video/canoe-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Canoë sur le Chassezac"></video><figcaption>Vidéo · le territoire</figcaption></figure>
+      <figure class="slot video has-media"><video class="fill" src="video/pate-vertical.mp4" poster="video/pate-vertical-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Pâte à pizza travaillée à la main au C4"></video><figcaption>Vidéo · format vertical</figcaption></figure>
     </div>
+  </div>
+</section>
+
+<!-- NOS FORMATS -->
+<section class="wrap" id="formats">
+  <span class="rub"><span class="star">✶</span> Nos formats</span>
+  <h2>Ce qu'on publie, <span class="serif">et pourquoi.</span></h2>
+  <p class="chapo">De l'aquarelle à la story, chaque contenu a un rôle : donner envie, faire réserver, faire revenir. Voici ce que l'équipe crée chaque semaine pour Voyage avec Vue et ses adresses, prêt à être repris sur votre site.</p>
+  <div class="fmts">
+    <article class="fmt">
+      <div class="fmt-txt"><span class="cat">Illustration</span><h3>Destinations dessinées</h3><p>Un lieu raconté à l'aquarelle : la maison, le jardin, les détails du séjour. Une même série vit sur le site, les réseaux, le livret d'accueil ou une affiche.</p><p class="where">Ici : les Cabanes de Salagnac</p></div>
+      <div class="strip"><figure class="it r916"><video src="video/dessin-anime.mp4" poster="video/dessin-anime-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Aquarelle animée d’une cabane dans les arbres"></video></figure><figure class="it r45"><img src="img/formats/f01.jpg" alt="Aquarelle des Cabanes de Salagnac" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f02.jpg" alt="Aquarelle : temps calme dans la cabane" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f03.jpg" alt="Aquarelle : herbier et curiosités de la forêt" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f04.jpg" alt="Aquarelle : une terrasse en bois au milieu des arbres" loading="lazy"></figure></div>
+    </article>
+    <article class="fmt">
+      <div class="fmt-txt"><span class="cat">Réseaux sociaux</span><h3>Stories et réels</h3><p>Des formats verticaux courts, tournés sur place et montés pour Instagram. Chacun renvoie vers l'adresse et sa réservation.</p><p class="where">Publiés sur les comptes de Voyage avec Vue</p></div>
+      <div class="strip"><figure class="it r916"><video src="video/story-lieu.mp4" poster="video/story-lieu-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Story vidéo : visite d’un intérieur ouvert sur le jardin"></video></figure><figure class="it r916"><img src="img/formats/f11.jpg" alt="Story : faire une virée à deux, au bord d’une piscine" loading="lazy"></figure></div>
+    </article>
+    <article class="fmt">
+      <div class="fmt-txt"><span class="cat">Newsletter</span><h3>Une adresse à la une</h3><p>Chaque mois, une adresse en couverture et la sélection « Vu &amp; Aimé », relayées en story le jour de l'envoi.</p><p class="where">Ici : Grand Hôtel du Golfe, Les Fleurines</p></div>
+      <div class="strip"><figure class="it r916"><img src="img/formats/f09.jpg" alt="Story de la newsletter de septembre 2026 : Grand Hôtel du Golfe" loading="lazy"></figure><figure class="it r916"><img src="img/formats/f12.jpg" alt="Story de la newsletter de juin 2026 : Les Fleurines" loading="lazy"></figure></div>
+    </article>
+    <article class="fmt">
+      <div class="fmt-txt"><span class="cat">Rubriques du média</span><h3>Portraits et fiches adresse</h3><p>La rubrique « Point de VU(e)s » donne la parole à ceux qui font les lieux. Les fiches adresse résument l'essentiel, et chaque publication renvoie vers le site.</p><p class="where">Ici : un chef étoilé, le Mas du Couvin</p></div>
+      <div class="strip"><figure class="it r45"><img src="img/formats/f05.jpg" alt="Rubrique Point de VU(e)s : portrait d’un chef étoilé" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f07.jpg" alt="Fiche adresse du Mas du Couvin, en Camargue" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f08.jpg" alt="Carte : vous n’en avez pas assez VU ? Encore plus d’adresses sur le site" loading="lazy"></figure></div>
+    </article>
   </div>
 </section>
 
@@ -575,7 +704,7 @@ footer small{display:block;font-size:.8rem;opacity:.7;margin-top:.2rem;text-tran
 
 <footer>
   <div class="wrap">
-    <div><span class="logo">VAV</span> <small>Le Studio · Voyage avec Vue</small></div>
+    <div><span class="logo"><span class="wm">voyage<i>avec</i>vue</span></span> <small>Le Studio · Voyage avec Vue</small></div>
     <p>Rien n'est généré. Tout a été vécu.</p>
   </div>
 </footer>
@@ -586,6 +715,8 @@ document.getElementById("leadForm").addEventListener("submit", function(e){
   document.getElementById("sent").textContent = "Maquette : sur le site final, votre demande arrivera directement à la rédaction du Studio.";
 });
 </script>
-
+<script>
+(function(){try{if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('video').forEach(function(v){v.removeAttribute('autoplay');v.pause();v.controls=true;});}}catch(e){}})();
+</script>
 </body>
 </html>
