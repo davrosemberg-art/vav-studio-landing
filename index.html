@@ -354,6 +354,20 @@ input,select,textarea{border:1px solid var(--ink)}
 .fmt-txt h3{font-size:1.5rem}
 .press-link{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.15em}
 .press-link:hover{opacity:.8}
+
+/* OUVERTURE : une photo plein cadre, un titre léger */
+.hero{position:relative;min-height:clamp(26rem,82vh,52rem);display:flex;align-items:flex-end;color:#F7F3EE;overflow:hidden;background:#1F2D2E}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,28,29,.6),rgba(20,28,29,0) 55%)}
+.hero-in{position:relative;z-index:1;width:100%;padding-block:3rem 3.25rem;display:flex;flex-direction:column;gap:.9rem}
+.hero .hero-t{font-family:var(--display);font-weight:300;text-transform:uppercase;letter-spacing:.1em;font-size:clamp(1.8rem,4.6vw,3.4rem);line-height:1.1;margin:0;color:#F7F3EE;max-width:none}
+.hero-k,.hero-down{font-family:var(--mono,"Space Mono",ui-monospace,Menlo,monospace);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#F7F3EE;margin:0}
+.hero-down{align-self:flex-start;text-decoration:none;border-bottom:1px solid #F7F3EE88;padding-bottom:.2rem}
+.hero-down:hover{border-color:#F7F3EE}
+.refs{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.toc ol{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.refs{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (max-width:600px){.toc ol{grid-template-columns:1fr}}
 /* MÉDIAS : photos et capsules du C4 */
 .vis,.slot{position:relative;overflow:hidden}
 .fill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
@@ -363,28 +377,13 @@ input,select,textarea{border:1px solid var(--ink)}
 </style>
 </head>
 <body>
-<!-- COVER -->
-<header class="cover grain">
-  <div class="wrap">
-    <div class="mast">
-      <div class="logo"><span class="wm">voyage<i>avec</i>vue</span></div>
-      <div class="side">Le Studio<span class="serif">photo, vidéo, récit &amp; conseil</span></div>
-    </div>
-    <div class="burst" aria-hidden="true">Rien<br>n'est<br>généré</div>
-    <div class="cover-grid">
-      <div>
-        <h1>On raconte votre lieu.<span class="serif">Vous remplissez en direct.</span></h1>
-        <div class="ctas">
-          <a class="btn" href="#redaction">Demander un diagnostic ✶</a>
-          <a class="btn alt" href="#conseils">Lire les conseils</a>
-        </div>
-      </div>
-      <ul class="coverlines">
-        <li><b>Hors saison</b><span>Remplir l'hiver sans tout miser sur les plateformes</span></li>
-        <li><b>Média</b><span>Votre adresse portée par Voyage avec Vue et ses relais</span></li>
-        <li><b>Portraits</b><span>Ils nous ont ouvert leurs portes, en images</span></li>
-      </ul>
-    </div>
+<!-- OUVERTURE -->
+<header class="hero" id="top">
+  <img class="hero-img" src="img/hero-labarthe.jpg" alt="La maison en pierre et la piscine du Domaine de Labarthe, dans le Lot">
+  <div class="hero-in wrap">
+    <p class="hero-k">Voyage avec Vue · Le Studio</p>
+    <h1 class="hero-t">Le Studio révèle votre lieu</h1>
+    <a class="hero-down" href="#edito">Découvrir ↓</a>
   </div>
 </header>
 
@@ -395,11 +394,9 @@ input,select,textarea{border:1px solid var(--ink)}
       <li style="--c:var(--c-edito)"><a href="#edito"><span class="n">01</span><span class="t">Édito<i>Pourquoi on fait ça</i></span></a></li>
       <li style="--c:var(--c-dossier)"><a href="#dossier"><span class="n">02</span><span class="t">Le dossier<i>Votre lieu, vos images</i></span></a></li>
       <li style="--c:var(--c-eco)"><a href="#ecosysteme"><span class="n">03</span><span class="t">L'écosystème<i>Un média, un studio, un club</i></span></a></li>
-      <li style="--c:var(--c-conseils)"><a href="#conseils"><span class="n">04</span><span class="t">Conseils<i>À lire, à garder</i></span></a></li>
-      <li style="--c:var(--c-portraits)"><a href="#portraits"><span class="n">05</span><span class="t">Portraits<i>Lieux et images</i></span></a></li>
-      <li style="--c:var(--c-carte)"><a href="#carte"><span class="n">06</span><span class="t">Le parcours<i>Rejoindre, révéler, grandir</i></span></a></li>
-      <li style="--c:var(--c-agenda)"><a href="#agenda"><span class="n">07</span><span class="t">Agenda<i>Les tournées</i></span></a></li>
-      <li style="--c:var(--c-redac)"><a href="#redaction"><span class="n">08</span><span class="t">La rédaction<i>Nous écrire</i></span></a></li>
+      <li style="--c:var(--c-portraits)"><a href="#portraits"><span class="n">04</span><span class="t">Portraits<i>Lieux et images</i></span></a></li>
+      <li style="--c:var(--c-carte)"><a href="#carte"><span class="n">05</span><span class="t">Le parcours<i>Rejoindre, révéler, grandir</i></span></a></li>
+      <li style="--c:var(--c-redac)"><a href="#redaction"><span class="n">06</span><span class="t">La rédaction<i>Nous écrire</i></span></a></li>
     </ol>
   </div>
 </nav>
@@ -484,85 +481,6 @@ input,select,textarea{border:1px solid var(--ink)}
   </div>
 </div>
 
-<!-- CONSEILS -->
-<section class="wrap" id="conseils">
-  <div class="conseils-head">
-    <div><span class="rub"><span class="star">✶</span> Conseils</span>
-    <h2>À lire, <span class="serif">à garder.</span></h2></div>
-    <p class="chapo" style="max-width:26rem">Des conseils concrets, tirés du terrain, pour les hébergeurs qui veulent mieux raconter et mieux vendre.</p>
-  </div>
-  <div class="articles">
-    <article class="art lead">
-      <div class="vis v1"><img class="fill" src="img/collines.jpg" alt="Collines et prairie autour du C4, en Ardèche" loading="lazy"><span class="tagline">Hors saison</span></div>
-      <span class="cat">Stratégie · 5 min</span>
-      <h3>Remplir l'hiver : six semaines pour préparer le printemps</h3>
-      <p class="dek">Les voyageurs choisissent leurs séjours de printemps pendant l'hiver. Ce que vous montrez maintenant décide de vos réservations d'avril.</p>
-      <details><summary>Lire le conseil ✶</summary>
-        <ol>
-          <li><b>Semaines 1 et 2 :</b> faites le point sur vos images. Celles qui datent ou qui ne montrent que les chambres sont à refaire.</li>
-          <li><b>Semaines 3 et 4 :</b> créez une ou deux offres de séjour liées au territoire (une balade, une table, un artisan), plus parlantes qu'une simple nuitée.</li>
-          <li><b>Semaine 5 :</b> mettez à jour votre site, votre fiche Google et vos annonces avec les mêmes images et les mêmes mots.</li>
-          <li><b>Semaine 6 :</b> écrivez à vos anciens clients. Une newsletter sincère, avec une offre réservée en direct, fait souvent mieux qu'une publicité.</li>
-        </ol>
-      </details>
-    </article>
-    <article class="art">
-      <div class="vis v2"><img class="fill" src="img/mi-fenetre-jardin.jpg" alt="Le jardin des Maisons Imaginaires vu à travers une fenêtre" loading="lazy"><span class="tagline">Photo</span></div>
-      <span class="cat">Image · 3 min</span>
-      <h3>Les cinq photos que chaque lieu devrait avoir</h3>
-      <details><summary>Lire le conseil ✶</summary>
-        <ol>
-          <li>L'arrivée : ce que le voyageur voit en premier.</li>
-          <li>Un détail qui vous ressemble : une tasse, un tissu, une poignée de porte.</li>
-          <li>Un moment vécu : le petit-déjeuner servi, un livre ouvert au soleil.</li>
-          <li>Le territoire : la vue, le village, le chemin d'à côté.</li>
-          <li>Vous : l'accueil est souvent ce que vos clients retiennent le plus.</li>
-        </ol>
-      </details>
-    </article>
-    <article class="art">
-      <div class="vis v3"><img class="fill" src="img/labarthe-terrasse.jpg" alt="Terrasse et piscine du Domaine de Labarthe" loading="lazy"><span class="tagline">Réservation directe</span></div>
-      <span class="cat">Vente · 4 min</span>
-      <h3>Quatre leviers simples pour réserver en direct</h3>
-      <details><summary>Lire le conseil ✶</summary>
-        <ol>
-          <li>Un bouton « Réserver » visible sur chaque page de votre site.</li>
-          <li>Un avantage réservé au direct : un petit-déjeuner, un départ tardif, un accueil local.</li>
-          <li>La même photo principale partout, pour qu'on vous reconnaisse d'un canal à l'autre.</li>
-          <li>Un email après le séjour, qui invite à revenir en réservant chez vous.</li>
-        </ol>
-      </details>
-    </article>
-    <article class="art">
-      <div class="vis v4"><img class="fill" src="img/labarthe-maison.jpg" alt="La maison et la piscine du Domaine de Labarthe" loading="lazy"><span class="tagline">Google</span></div>
-      <span class="cat">Visibilité · 3 min</span>
-      <h3>Votre fiche Google, votre première vitrine</h3>
-      <details><summary>Lire le conseil ✶</summary>
-        <ul>
-          <li>Des photos récentes, ajoutées régulièrement.</li>
-          <li>Une description qui parle du séjour, pas seulement des équipements.</li>
-          <li>Une réponse à chaque avis, même court.</li>
-          <li>Le lien vers votre site, pas vers une plateforme.</li>
-        </ul>
-      </details>
-    </article>
-    <article class="art">
-      <div class="vis v5"><img class="fill" src="img/mi-salon.jpg" alt="Le salon des Maisons Imaginaires sous sa mezzanine" loading="lazy"><span class="tagline">Accueil</span></div>
-      <span class="cat">Fidélité · 3 min</span>
-      <h3>Le livret d'accueil qui fait revenir</h3>
-      <details><summary>Lire le conseil ✶</summary>
-        <ul>
-          <li>Vos adresses à vous, avec une phrase sur chacune.</li>
-          <li>Une balade à faire depuis le lieu, sans voiture si possible.</li>
-          <li>L'histoire de la maison en quelques lignes.</li>
-          <li>Une invitation à revenir, avec l'avantage du direct.</li>
-        </ul>
-        <p style="margin-top:.8rem">Le Studio le conçoit pour vous, dessiné ou photographié, et le fait imprimer.</p>
-      </details>
-    </article>
-  </div>
-</section>
-
 <!-- PORTRAITS -->
 <section class="portraits grain" id="portraits">
   <div class="wrap">
@@ -572,7 +490,6 @@ input,select,textarea{border:1px solid var(--ink)}
       <article class="ref"><div class="vis v1"><img class="fill" src="img/service-terrasse.jpg" alt="Service du petit-déjeuner en terrasse au C4" loading="lazy"></div><div class="txt"><span class="place">Ardèche</span><h3>Le C4</h3></div></article>
       <article class="ref"><div class="vis v3"><img class="fill" src="img/labarthe-maison-piscine.jpg" alt="Le Domaine de Labarthe et sa piscine" loading="lazy"></div><div class="txt"><span class="place">Lot</span><h3>Domaine de Labarthe</h3></div></article>
       <article class="ref"><div class="vis v5"><img class="fill" src="img/mi-cour.jpg" alt="La cour intérieure des Maisons Imaginaires" loading="lazy"></div><div class="txt"><span class="place">Bouches-du-Rhône</span><h3>Les Maisons Imaginaires</h3></div></article>
-      <article class="ref"><div class="vis v4"></div><div class="txt"><span class="place">Eure</span><h3>Youza Ecolodge</h3></div></article>
     </div>
     <div class="gal-head">
       <h3>En images</h3>
@@ -642,74 +559,29 @@ input,select,textarea{border:1px solid var(--ink)}
   </div>
 </section>
 
-<!-- PROMESSES -->
-<section class="promises" id="promesses">
-  <div class="wrap">
-    <span class="rub"><span class="star">✶</span> Nos promesses</span>
-    <h2>Ce qu'on s'engage <span class="serif">à faire.</span></h2>
-    <ul class="plist">
-      <li><span class="s">✶</span><div><b>On vient sur place</b><span>Pas de récit sans séjour. On découvre le lieu et son territoire avant de le raconter.</span></div></li>
-      <li><span class="s">✶</span><div><b>Pensé pour votre retour sur investissement</b><span>Un devis clair avant de démarrer, et pour chaque prestation, ce qu’elle doit vous rapporter.</span></div></li>
-      <li><span class="s">✶</span><div><b>Des contenus prêts à publier</b><span>Formats adaptés à votre site, Google, Instagram et vos annonces.</span></div></li>
-      <li><span class="s">✶</span><div><b>Rien de généré</b><span>Des vraies images, des vrais gens, des textes écrits par des journalistes.</span></div></li>
-      <li><span class="s">✶</span><div><b>Un seul interlocuteur</b><span>Une personne suit votre projet du premier échange à la mise en ligne.</span></div></li>
-      <li><span class="s">✶</span><div><b>Partout en France</b><span>Une équipe répartie sur le territoire, qui se déplace là où vous êtes.</span></div></li>
-    </ul>
-  </div>
-</section>
-
-<!-- AGENDA -->
-<section class="agenda grain" id="agenda">
-  <div class="wrap">
-    <span class="rub"><span class="star">✶</span> Agenda</span>
-    <h2>Les tournées <span class="serif">de l'hiver.</span></h2>
-    <div class="dates">
-      <div class="date"><span class="datebar">Janvier 2027</span><div><h3>Tournée n°1</h3><p>Région annoncée prochainement · créneaux limités</p></div><a class="btn" href="#redaction">Réserver</a></div>
-      <div class="date"><span class="datebar">Février 2027</span><div><h3>Tournée n°2</h3><p>Région annoncée prochainement · créneaux limités</p></div><a class="btn" href="#redaction">Réserver</a></div>
-      <div class="date"><span class="datebar">Mars 2027</span><div><h3>Tournée n°3</h3><p>Région annoncée prochainement · créneaux limités</p></div><a class="btn" href="#redaction">Réserver</a></div>
-    </div>
-    <p class="chapo">On regroupe plusieurs lieux d'une même région sur une semaine : les frais de déplacement sont partagés, et vos contenus sont prêts avant le printemps.</p>
-  </div>
-</section>
-
-<!-- COURRIER -->
-<section class="wrap" id="courrier">
-  <span class="rub"><span class="star">✶</span> Courrier</span>
-  <h2>Vos questions, <span class="serif">nos réponses.</span></h2>
-  <div class="letters">
-    <div class="letter"><p class="q">C'est un vrai budget pour une petite maison d'hôtes.</p><p class="from">Question fréquente</p><p class="a"><b>Réponse</b>Chaque réservation qui revient en direct, c'est une commission en moins. Le diagnostic sert justement à faire ce calcul avec vos propres chiffres.</p></div>
-    <div class="letter"><p class="q">J'ai déjà des photos, ça ne suffit pas ?</p><p class="from">Question fréquente</p><p class="a"><b>Réponse</b>Peut-être que si. On les regarde ensemble pendant le diagnostic, et si elles font le travail, on vous le dit.</p></div>
-    <div class="letter"><p class="q">L'hiver, je n'ai pas la tête à ça.</p><p class="from">Question fréquente</p><p class="a"><b>Réponse</b>C'est pourtant le meilleur moment : le lieu est calme et on s'occupe de tout. Il suffit de nous ouvrir la porte.</p></div>
-    <div class="letter"><p class="q">Vous venez aussi chez nous ?</p><p class="from">Question fréquente</p><p class="a"><b>Réponse</b>Oui. L'équipe est répartie aux quatre coins de la France et se déplace partout.</p></div>
-  </div>
-</section>
-
 <!-- REDACTION -->
 <section class="redac grain" id="redaction">
   <div class="wrap">
     <span class="rub"><span class="star">✶</span> La rédaction</span>
     <h2>Parlons <span class="serif">de votre lieu.</span></h2>
-    <form class="form" id="leadForm">
+    <form class="form" id="leadForm" name="studio-contact" method="POST" action="/merci.html" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="studio-contact">
+      <p hidden><label>Ne pas remplir <input name="bot-field"></label></p>
       <label for="f-name">Votre établissement<input id="f-name" name="name" required></label>
+      <label for="f-url">Site web du lieu<input id="f-url" name="url" type="url" inputmode="url" placeholder="https://"></label>
       <label for="f-type">Type de lieu<select id="f-type" name="type"><option>Hôtel</option><option>Gîte</option><option>Chambres d'hôtes</option><option>Camping</option><option>Groupe hôtelier</option></select></label>
       <label for="f-rooms">Chambres ou hébergements<input id="f-rooms" name="rooms" inputmode="numeric"></label>
       <label for="f-need">Votre besoin<select id="f-need" name="need"><option>Des images et des vidéos</option><option>Une communication à l'année</option><option>Vendre davantage en direct</option><option>Je ne sais pas encore</option></select></label>
       <label for="f-when">Quand ?<select id="f-when" name="when"><option>Cet hiver</option><option>Printemps 2027</option><option>Plus tard</option></select></label>
-      <label for="f-mail">Email<input id="f-mail" name="mail" type="email" required></label>
+      <label for="f-mail" class="full">Email<input id="f-mail" name="mail" type="email" required></label>
       <label for="f-msg" class="full">Racontez-nous votre lieu en quelques mots<textarea id="f-msg" name="msg"></textarea></label>
       <div class="full"><button class="btn" type="submit">Envoyer</button></div>
-      <p class="sent" id="sent" role="status" aria-live="polite"></p>
+      
     </form>
   </div>
 </section>
 
 
-<script>
-document.getElementById("leadForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  document.getElementById("sent").textContent = "Maquette : sur le site final, votre demande arrivera directement à la rédaction du Studio.";
-});
-</script>
 <script>
 (function(){try{if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('video').forEach(function(v){v.removeAttribute('autoplay');v.pause();v.controls=true;});}}catch(e){}})();
 </script>
