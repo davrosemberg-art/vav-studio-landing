@@ -352,6 +352,8 @@ input,select,textarea{border:1px solid var(--ink)}
 @media (max-width:760px){.fmt{grid-template-columns:1fr}.strip .it{height:240px}}
 .fmt-txt .where{font-family:var(--mono);font-size:.8rem;opacity:.85}
 .fmt-txt h3{font-size:1.5rem}
+.press-link{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.15em}
+.press-link:hover{opacity:.8}
 /* MÉDIAS : photos et capsules du C4 */
 .vis,.slot{position:relative;overflow:hidden}
 .fill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
@@ -364,7 +366,6 @@ input,select,textarea{border:1px solid var(--ink)}
 <!-- COVER -->
 <header class="cover grain">
   <div class="wrap">
-    <div class="topline"><span>N°01 · Hiver 2026-27</span><span>Photo · vidéo · récit · conseil</span><span>Par Voyage avec Vue</span></div>
     <div class="mast">
       <div class="logo"><span class="wm">voyage<i>avec</i>vue</span></div>
       <div class="side">Le Studio<span class="serif">photo, vidéo, récit &amp; conseil</span></div>
@@ -475,10 +476,10 @@ input,select,textarea{border:1px solid var(--ink)}
 <div class="proofs" role="region" aria-label="Nos chiffres et relais">
   <div class="wrap">
     <ul>
-      <li><b>≈ 500 000</b><span>visiteurs uniques par an sur Voyage avec Vue</span></li>
+      <li><b>300 000</b><span>visites par an sur Voyage avec Vue</span></li>
       <li><b>42 %</b><span>d'ouverture pour notre newsletter</span></li>
-      <li><b>L'Opinion · Trait Déco</b><span>nos relais éditoriaux dans la presse</span></li>
-      <li><b>Membre ATR</b><span>Agir pour un Tourisme Responsable</span></li>
+      <li><b><a class="press-link" href="https://www.lopinion.fr/auteur/voyage-avec-vue">L'Opinion</a> · <a class="press-link" href="https://www.traits-dcomagazine.fr/author/voyage-avec-vue/">Trait's D'Co</a></b><span>nos rubriques dans la presse</span></li>
+      <li><b>Membre ATR</b><span>Agir pour un Tourisme Responsable, depuis 2022</span></li>
     </ul>
   </div>
 </div>
@@ -569,9 +570,9 @@ input,select,textarea{border:1px solid var(--ink)}
     <h2>Ils nous ont ouvert <span class="serif">leurs portes.</span></h2>
     <div class="refs">
       <article class="ref"><div class="vis v1"><img class="fill" src="img/service-terrasse.jpg" alt="Service du petit-déjeuner en terrasse au C4" loading="lazy"></div><div class="txt"><span class="place">Ardèche</span><h3>Le C4</h3></div></article>
-      <article class="ref"><div class="vis v3"><img class="fill" src="img/labarthe-maison-piscine.jpg" alt="Le Domaine de Labarthe et sa piscine" loading="lazy"></div><div class="txt"><span class="place">Dordogne</span><h3>Domaine de Labarthe</h3></div></article>
-      <article class="ref"><div class="vis v5"><img class="fill" src="img/mi-cour.jpg" alt="La cour intérieure des Maisons Imaginaires" loading="lazy"></div><div class="txt"><span class="place">Saint-Rémy-de-Provence</span><h3>Les Maisons Imaginaires</h3></div></article>
-      <article class="ref"><div class="vis v4"></div><div class="txt"><span class="place">Normandie</span><h3>Youza Ecolodge</h3></div></article>
+      <article class="ref"><div class="vis v3"><img class="fill" src="img/labarthe-maison-piscine.jpg" alt="Le Domaine de Labarthe et sa piscine" loading="lazy"></div><div class="txt"><span class="place">Lot</span><h3>Domaine de Labarthe</h3></div></article>
+      <article class="ref"><div class="vis v5"><img class="fill" src="img/mi-cour.jpg" alt="La cour intérieure des Maisons Imaginaires" loading="lazy"></div><div class="txt"><span class="place">Bouches-du-Rhône</span><h3>Les Maisons Imaginaires</h3></div></article>
+      <article class="ref"><div class="vis v4"></div><div class="txt"><span class="place">Eure</span><h3>Youza Ecolodge</h3></div></article>
     </div>
     <div class="gal-head">
       <h3>En images</h3>
@@ -696,18 +697,12 @@ input,select,textarea{border:1px solid var(--ink)}
       <label for="f-when">Quand ?<select id="f-when" name="when"><option>Cet hiver</option><option>Printemps 2027</option><option>Plus tard</option></select></label>
       <label for="f-mail">Email<input id="f-mail" name="mail" type="email" required></label>
       <label for="f-msg" class="full">Racontez-nous votre lieu en quelques mots<textarea id="f-msg" name="msg"></textarea></label>
-      <div class="full"><button class="btn" type="submit">Envoyer à la rédaction ✶</button></div>
+      <div class="full"><button class="btn" type="submit">Envoyer</button></div>
       <p class="sent" id="sent" role="status" aria-live="polite"></p>
     </form>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div><span class="logo"><span class="wm">voyage<i>avec</i>vue</span></span> <small>Le Studio · Voyage avec Vue</small></div>
-    <p>Rien n'est généré. Tout a été vécu.</p>
-  </div>
-</footer>
 
 <script>
 document.getElementById("leadForm").addEventListener("submit", function(e){
