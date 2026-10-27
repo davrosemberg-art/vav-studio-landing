@@ -406,6 +406,25 @@ input,select,textarea{border:1px solid var(--ink)}
 .contact-box{margin-top:2rem;max-width:46rem;background:var(--cream);border:1px solid var(--ink);padding:1.6rem 1.8rem;display:flex;flex-direction:column;gap:1rem;align-items:flex-start}
 .contact-box p{font-size:1.1rem}
 .contact-box .small{font-size:.9rem;opacity:.8}
+
+/* V3 : moins de texte, zones dépliables */
+.more{margin-top:.2rem}
+.more summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:.45rem;font-family:var(--mono,"Space Mono",ui-monospace,monospace);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:.15rem}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:"+";font-size:1rem;line-height:1}
+.more[open] summary::after{content:"\2212"}
+.more>div{margin-top:.9rem;display:grid;gap:.8rem}
+.edito .body{columns:1!important;max-width:40rem}
+.edito .body .lead{font-size:1.2rem;line-height:1.5}
+.poster{gap:.5rem}
+.sub details summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.sub details summary::-webkit-details-marker{display:none}
+.sub details summary h4::after{content:" +";font-weight:400;opacity:.6}
+.sub details[open] summary h4::after{content:" \2212"}
+.sub details p{margin-top:.5rem}
+.sub .tarif{margin-top:0;white-space:nowrap}
+.pillar-card p{font-size:1rem}
+.fmt-txt p{font-size:1rem}
 </style>
 </head>
 <body>
@@ -442,8 +461,10 @@ input,select,textarea{border:1px solid var(--ink)}
     <div>
       <div class="body">
         <p class="lead">Le Studio Voyage avec Vue accompagne les hôteliers indépendants, les maisons d’hôtes, les gîtes, les hébergements insolites, les campings, finalement, là où on peut dormir, dans leurs besoins structurels, opérationnels et/ou ponctuels.</p>
-        <p>Nous concevons une bibliothèque de contenus (photo, vidéo, etc.) guidée par une direction artistique qui en assure la cohérence, la lisibilité et la durabilité sur l’ensemble de vos canaux.</p>
-        <p>Au-delà de la production, le Studio intervient comme un partenaire d’accompagnement : gestion des réseaux sociaux, audit du positionnement, renfort commercial, stratégie marketing. L’objectif est double : soulager l’instant T et structurer le long terme, en assurant la cohérence de vos outils, de vos messages et de votre visibilité globale.</p>
+        <details class="more"><summary>Lire la suite</summary><div>
+          <p>Nous concevons une bibliothèque de contenus (photo, vidéo, etc.) guidée par une direction artistique qui en assure la cohérence, la lisibilité et la durabilité sur l’ensemble de vos canaux.</p>
+          <p>Au-delà de la production, le Studio intervient comme un partenaire d’accompagnement : gestion des réseaux sociaux, audit du positionnement, renfort commercial, stratégie marketing. L’objectif est double : soulager l’instant T et structurer le long terme, en assurant la cohérence de vos outils, de vos messages et de votre visibilité globale.</p>
+        </div></details>
       </div>
       <p class="sign">Le Studio Voyage avec Vue</p>
     </div>
@@ -456,12 +477,12 @@ input,select,textarea{border:1px solid var(--ink)}
     <span class="rub"><span class="star">✶</span> Le dossier</span>
     <h2>Votre lieu est plus beau <span class="serif">que vos images.</span></h2>
     <div class="posters">
-      <div class="poster"><span class="big">01</span><h3>Des photos qui ne disent pas tout</h3><p>Prises au téléphone ou il y a cinq ans, elles montrent des chambres, pas un séjour : ni l'accueil, ni la table, ni la lumière du soir.</p></div>
-      <div class="poster"><span class="big">02</span><h3>Les plateformes gardent la relation</h3><p>Les commissions pèsent sur la marge, et vos clients ne vous connaissent qu'à travers une fiche standard.</p></div>
-      <div class="poster"><span class="big">03</span><h3>Pas le temps de raconter</h3><p>La saison avale tout. Le site, les réseaux et la newsletter passent toujours après.</p></div>
+      <div class="poster"><span class="big">01</span><h3>Des photos qui ne disent pas tout</h3></div>
+      <div class="poster"><span class="big">02</span><h3>Les plateformes gardent la relation</h3></div>
+      <div class="poster"><span class="big">03</span><h3>Pas le temps de raconter</h3></div>
     </div>
     <div class="answer">
-      <p>Notre réponse : un récit vrai de votre lieu, pensé pour donner envie et pour ramener la réservation chez vous.</p>
+      <p>Notre réponse : un récit vrai de votre lieu, et la réservation qui revient chez vous.</p>
       <a class="btn" href="#carte">Voir le parcours</a>
     </div>
   </div>
@@ -471,32 +492,29 @@ input,select,textarea{border:1px solid var(--ink)}
 <section class="wrap" id="ecosysteme">
   <span class="rub"><span class="star">✶</span> L'écosystème</span>
   <h2>La Collection, le Studio, <span class="serif">le Club.</span></h2>
-  <p class="chapo">Voyage avec Vue accompagne les acteurs de l’hôtellerie indépendante, majoritairement en France et à l’étranger : hôtels, gîtes, maisons d’hôtes, hébergements insolites, campings, à révéler leur singularité à travers la Collection et leur image à travers le Studio.</p>
+  <p class="chapo">Révéler votre adresse, révéler votre image, relier les marques du voyage.</p>
   <div class="eco-grid">
     <article class="pillar-card">
       <span class="role">Révèle votre adresse</span>
       <h3>La Collection</h3>
-      <p>Nous valorisons la singularité de chaque adresse. La Collection offre une visibilité éditoriale portée par notre média et les différents dispositifs de Voyage avec Vue : les réseaux sociaux, le site internet, la newsletter, les activations marketing.</p>
+      <p>Une visibilité éditoriale portée par notre média.</p>
+      <details class="more"><summary>En savoir plus</summary><div><p>Nous valorisons la singularité de chaque adresse. La Collection offre une visibilité éditoriale portée par notre média et les différents dispositifs de Voyage avec Vue : les réseaux sociaux, le site internet, la newsletter, les activations marketing.</p></div></details>
     </article>
     <article class="pillar-card">
       <span class="role">Révèle votre image</span>
       <h3>Le Studio</h3>
-      <p>Nous créons des images qui racontent votre lieu et vous accompagnons au quotidien. Conseil, contenu : une équipe présente, de la stratégie à l’opérationnel.</p>
-      <ul>
-        <li>Création : shooting photo, vidéos et capsules, direction artistique 360</li>
-        <li>Stratégie : communication digitale, renfort commercial</li>
-        <li>Backoffice externe et hotline</li>
-      </ul>
+      <p>Des images qui racontent votre lieu, une équipe présente au quotidien.</p>
+      <details class="more"><summary>En savoir plus</summary><div><p>Nous créons des images qui racontent votre lieu et vous accompagnons au quotidien. Conseil, contenu : une équipe présente, de la stratégie à l’opérationnel.</p></div></details>
     </article>
     <article class="pillar-card">
       <span class="role">Relier</span>
       <h3>Le Club VAV</h3>
-      <p>Les marques voyage de notre écosystème, mises en avant auprès de notre communauté et de nos adresses.</p>
+      <p>Les marques voyage de notre écosystème, mises en avant auprès de nos adresses.</p>
     </article>
   </div>
   <div class="eco-center">
     <h3>Au centre : votre adresse</h3>
-    <p>La vue qui change tout : la même équipe la révèle, la raconte et la fait connaître.</p>
+    <p>La vue qui change tout.</p>
   </div>
 </section>
 
@@ -544,22 +562,22 @@ input,select,textarea{border:1px solid var(--ink)}
 <section class="wrap" id="formats">
   <span class="rub"><span class="star">✶</span> Nos formats</span>
   <h2>Ce qu'on publie, <span class="serif">et pourquoi.</span></h2>
-  <p class="chapo">De l'aquarelle à la story, chaque contenu a un rôle : donner envie, faire réserver, faire revenir. Voici ce que l'équipe crée chaque semaine pour Voyage avec Vue et ses adresses, prêt à être repris sur votre site.</p>
+  <p class="chapo">Donner envie, faire réserver, faire revenir.</p>
   <div class="fmts">
     <article class="fmt">
-      <div class="fmt-txt"><span class="cat">Illustration</span><h3>Destinations dessinées</h3><p>Un lieu raconté à l'aquarelle : la maison, le jardin, les détails du séjour. Une même série vit sur le site, les réseaux, le livret d'accueil ou une affiche.</p><p class="where">Ici : les Cabanes de Salagnac</p></div>
+      <div class="fmt-txt"><span class="cat">Illustration</span><h3>Destinations dessinées</h3><p>Un lieu raconté à l'aquarelle, du site au livret d'accueil.</p><p class="where">Ici : les Cabanes de Salagnac</p></div>
       <div class="strip"><figure class="it r916"><video src="video/dessin-anime.mp4" poster="video/dessin-anime-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Aquarelle animée d’une cabane dans les arbres"></video></figure><figure class="it r45"><img src="img/formats/f01.jpg" alt="Aquarelle des Cabanes de Salagnac" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f02.jpg" alt="Aquarelle : temps calme dans la cabane" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f03.jpg" alt="Aquarelle : herbier et curiosités de la forêt" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f04.jpg" alt="Aquarelle : une terrasse en bois au milieu des arbres" loading="lazy"></figure></div>
     </article>
     <article class="fmt">
-      <div class="fmt-txt"><span class="cat">Réseaux sociaux</span><h3>Stories et réels</h3><p>Des formats verticaux courts, tournés sur place et montés pour Instagram. Chacun renvoie vers l'adresse et sa réservation.</p><p class="where">Ici : le Nid des Vosges, et une story de lieu</p></div>
+      <div class="fmt-txt"><span class="cat">Réseaux sociaux</span><h3>Stories et réels</h3><p>Des formats courts, tournés sur place.</p><p class="where">Ici : le Nid des Vosges, et une story de lieu</p></div>
       <div class="strip"><figure class="it r916"><video src="video/nid-reel.mp4" poster="video/nid-reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Reel du Nid des Vosges"></video></figure><figure class="it r916"><video src="video/story-lieu.mp4" poster="video/story-lieu-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Story vidéo : visite d’un intérieur ouvert sur le jardin"></video></figure><figure class="it r916"><img src="img/formats/f11.jpg" alt="Story : faire une virée à deux, au bord d’une piscine" loading="lazy"></figure></div>
     </article>
     <article class="fmt">
-      <div class="fmt-txt"><span class="cat">Newsletter</span><h3>Une adresse à la une</h3><p>Chaque mois, une adresse en couverture et la sélection « Vu &amp; Aimé », relayées en story le jour de l'envoi.</p><p class="where">Ici : Grand Hôtel du Golfe, Les Fleurines</p></div>
+      <div class="fmt-txt"><span class="cat">Newsletter</span><h3>Une adresse à la une</h3><p>Chaque mois, une adresse en couverture.</p><p class="where">Ici : Grand Hôtel du Golfe, Les Fleurines</p></div>
       <div class="strip"><figure class="it r916"><img src="img/formats/f09.jpg" alt="Story de la newsletter de septembre 2026 : Grand Hôtel du Golfe" loading="lazy"></figure><figure class="it r916"><img src="img/formats/f12.jpg" alt="Story de la newsletter de juin 2026 : Les Fleurines" loading="lazy"></figure></div>
     </article>
     <article class="fmt">
-      <div class="fmt-txt"><span class="cat">Rubriques du média</span><h3>Portraits et fiches adresse</h3><p>La rubrique « Point de VU(e)s » donne la parole à ceux qui font les lieux. Les fiches adresse résument l'essentiel, et chaque publication renvoie vers le site.</p><p class="where">Ici : un chef étoilé, le Mas du Couvin</p></div>
+      <div class="fmt-txt"><span class="cat">Rubriques du média</span><h3>Portraits et fiches adresse</h3><p>La parole à ceux qui font les lieux.</p><p class="where">Ici : un chef étoilé, le Mas du Couvin</p></div>
       <div class="strip"><figure class="it r45"><img src="img/formats/f05.jpg" alt="Rubrique Point de VU(e)s : portrait d’un chef étoilé" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f07.jpg" alt="Fiche adresse du Mas du Couvin, en Camargue" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f08.jpg" alt="Carte : vous n’en avez pas assez VU ? Encore plus d’adresses sur le site" loading="lazy"></figure></div>
     </article>
   </div>
@@ -569,27 +587,27 @@ input,select,textarea{border:1px solid var(--ink)}
 <section class="wrap" id="carte">
   <span class="rub"><span class="star">✶</span> Le parcours</span>
   <h2>Rejoindre, révéler, <span class="serif">faire grandir.</span></h2>
-  <p class="chapo">Chaque prestation est pensée pour votre retour sur investissement : plus de réservations en direct, moins de commissions, des clients qui reviennent. On avance avec chaque adresse à son rythme, avec un seul interlocuteur.</p>
+  <p class="chapo">Trois étapes, à votre rythme, avec un seul interlocuteur.</p>
   <div class="offers">
     <article class="offer">
       <div class="head"><span class="step">Étape 1 · La Collection</span><h3>Rejoindre</h3><p class="for">Révèle votre adresse.</p></div>
-      <div class="sub"><h4>La Collection</h4><p>Une visibilité éditoriale portée par notre média : les réseaux sociaux, le site internet, la newsletter, les activations marketing.</p><p class="tarif">420 € HT / an</p></div>
+      <div class="sub"><details><summary><h4>La Collection</h4><span class="tarif">420 € HT / an</span></summary><p>Une visibilité éditoriale portée par notre média : les réseaux sociaux, le site internet, la newsletter, les activations marketing.</p></details></div>
     </article>
     <article class="offer">
       <div class="head"><span class="step">Étape 2 · Création</span><h3>Révéler</h3><p class="for">Révèle votre image.</p></div>
-      <div class="sub"><h4>Shooting photo</h4><p>Une bibliothèque de contenus mixant les expériences, la singularité du lieu et le territoire. 100 images livrées, pour près de 12 mois de contenu.</p><p class="tarif">Sur devis</p></div>
-      <div class="sub"><h4>Vidéos et capsules immersives</h4><p>Capsules, formats longs adaptés Reel ou paysage, tournages avec casting pour vos campagnes.</p><p class="tarif">Sur devis</p></div>
-      <div class="sub"><h4>Direction artistique 360</h4><p>Storytelling, brand content, charte graphique, destinations dessinées, intention visuelle par canal et stratégie de contenu.</p><p class="tarif">Sur devis</p></div>
+      <div class="sub"><details><summary><h4>Shooting photo</h4><span class="tarif">Sur devis</span></summary><p>Une bibliothèque de contenus mixant les expériences, la singularité du lieu et le territoire. 100 images livrées, pour près de 12 mois de contenu.</p></details></div>
+      <div class="sub"><details><summary><h4>Vidéos et capsules immersives</h4><span class="tarif">Sur devis</span></summary><p>Capsules, formats longs adaptés Reel ou paysage, tournages avec casting pour vos campagnes.</p></details></div>
+      <div class="sub"><details><summary><h4>Direction artistique 360</h4><span class="tarif">Sur devis</span></summary><p>Storytelling, brand content, charte graphique, destinations dessinées, intention visuelle par canal et stratégie de contenu.</p></details></div>
     </article>
     <article class="offer">
       <div class="head"><span class="step">Étape 3 · Stratégie</span><h3>Faire grandir</h3><p class="for">Soulager l’instant T, structurer le long terme.</p></div>
-      <div class="sub"><h4>Communication digitale</h4><p>Planning éditorial, réseaux sociaux, newsletters, parcours de réservation et e-mails automatisés. Durée minimale : 3 mois.</p><p class="tarif">Sur devis</p></div>
-      <div class="sub"><h4>Renfort commercial</h4><p>Offre loisirs ou événementiels, partenariats B2B avec agences et réceptifs, devis des demandes entrantes. Durée minimale : 6 mois.</p><p class="tarif">Sur devis</p></div>
-      <div class="sub"><h4>Backoffice externe et hotline</h4><p>Livret d’accueil, mises à jour des OTA, site web, rédaction d’articles, aides à la vente. Durée : quand c’est nécessaire !</p><p class="tarif">Sur devis</p></div>
+      <div class="sub"><details><summary><h4>Communication digitale</h4><span class="tarif">Sur devis</span></summary><p>Planning éditorial, réseaux sociaux, newsletters, parcours de réservation et e-mails automatisés. Durée minimale : 3 mois.</p></details></div>
+      <div class="sub"><details><summary><h4>Renfort commercial</h4><span class="tarif">Sur devis</span></summary><p>Offre loisirs ou événementiels, partenariats B2B avec agences et réceptifs, devis des demandes entrantes. Durée minimale : 6 mois.</p></details></div>
+      <div class="sub"><details><summary><h4>Backoffice externe et hotline</h4><span class="tarif">Sur devis</span></summary><p>Livret d’accueil, mises à jour des OTA, site web, rédaction d’articles, aides à la vente. Durée : quand c’est nécessaire !</p></details></div>
     </article>
   </div>
   <div class="entry">
-    <div><h3>On commence par un diagnostic</h3><p>20 minutes offertes pour regarder ensemble vos images, vos annonces et vos canaux de réservation. Vous repartez avec trois pistes concrètes, que vous travailliez avec nous ou non.</p></div>
+    <div><h3>On commence par un diagnostic</h3><p>20 minutes offertes, trois pistes concrètes.</p></div>
     <a class="btn" href="https://pro.voyageavecvue.com/#contact-us">Discuter de vos besoins</a>
   </div>
 </section>
@@ -598,21 +616,14 @@ input,select,textarea{border:1px solid var(--ink)}
 <section class="wrap carnet" id="carnet">
   <span class="rub"><span class="star">✶</span> Le carnet</span>
   <h2>Tourisme et environnement, <span class="serif">notre carnet de veille.</span></h2>
-  <p class="chapo">Un seul fil : l’environnement. Ce qui évolue dans les textes et les labels, ce que racontent les hébergeurs qui s’engagent, ce qu’on applique nous-mêmes. Une veille partagée avec les professionnels qui nous suivent, dans la continuité de notre engagement auprès d’ATR, Agir pour un Tourisme Responsable, depuis 2022.</p>
+  <p class="chapo">Un seul fil, l’environnement : veille, articles, témoignages et engagements. Membres d’ATR, Agir pour un Tourisme Responsable, depuis 2022.</p>
   <div class="notes">
     <article class="note"><div class="ph"><img src="img/nid-cabane-bois.jpg" alt="Une cabane en bois gris au milieu des sapins" loading="lazy"></div><span class="tag">Veille</span><h3>Ce qui évolue</h3><p>Réglementation, labels, études publiques sur le tourisme durable : l’essentiel de la semaine, résumé simplement.</p></article>
     <article class="note"><div class="ph"><img src="img/collines.jpg" alt="Des collines boisées sous un ciel clair" loading="lazy"></div><span class="tag">Articles</span><h3>Comprendre</h3><p>Un sujet de fond par article, l’eau, l’énergie, la mobilité, la biodiversité, expliqué pour celles et ceux qui accueillent.</p></article>
     <article class="note"><div class="ph"><img src="img/mi-fenetre-jardin.jpg" alt="Un jardin et une piscine vus à travers une fenêtre à carreaux" loading="lazy"></div><span class="tag">Témoignages</span><h3>Ceux qui s’engagent</h3><p>Des hébergeurs racontent ce qu’ils ont changé, ce qui a marché, ce qui reste difficile, avec leurs mots.</p></article>
     <article class="note"><div class="ph"><img src="img/nid-passerelle.jpg" alt="Une passerelle en bois dans la forêt" loading="lazy"></div><span class="tag">Engagements</span><h3>Ce qu’on applique</h3><p>Notre façon de travailler et de voyager, et pourquoi nous sommes membres d’ATR depuis 2022.</p></article>
   </div>
-  <div class="veille">
-    <div><h3>Un carnet de veille, un article par semaine</h3><p style="margin-top:.6rem">Chaque semaine, un nouveau contenu sur l’environnement et le tourisme, publié sur le site et relayé dans la newsletter.</p><p style="margin-top:1rem"><a class="btn" href="https://pro.voyageavecvue.com/astuces-conseils-bonnes-pratiques-hotellerie-independante">Lire le blog</a></p></div>
-    <ol>
-      <li><b>01 · Veille</b>Textes officiels, études, labels et retours de terrain : on collecte et on trie chaque semaine.</li>
-      <li><b>02 · Rédaction</b>Un sujet retenu devient un article, un témoignage ou un point d’étape, illustré avec nos images.</li>
-      <li><b>03 · Publication</b>Mise en ligne sur le site, reprise en newsletter et sur les réseaux, avec les mots-clés suivis.</li>
-    </ol>
-  </div>
+  <details class="more"><summary>Un article par semaine</summary><div><p>Chaque semaine, un nouveau contenu sur l’environnement et le tourisme, publié sur le site et relayé dans la newsletter. Pour l’instant, retrouvez nos conseils sur <a class="press-link" href="https://pro.voyageavecvue.com/astuces-conseils-bonnes-pratiques-hotellerie-independante">le blog</a>.</p></div></details>
 </section>
 
 <!-- REDACTION -->
@@ -621,9 +632,8 @@ input,select,textarea{border:1px solid var(--ink)}
     <span class="rub"><span class="star">✶</span> Nous contacter</span>
     <h2>Croisons <span class="serif">nos regards.</span></h2>
     <div class="contact-box">
-      <p>Besoin de structurer ou de faire évoluer votre image ? Une question à nous poser, un projet à imaginer ensemble, une adresse à référencer ? Parlons-en ensemble.</p>
+      <p>Une question, un projet, une adresse à référencer ? Parlons-en.</p>
       <a class="btn" href="https://pro.voyageavecvue.com/#contact-us">Nous contacter</a>
-      <p class="small">Le formulaire s’ouvre sur pro.voyageavecvue.com.</p>
     </div>
   </div>
 </section>
