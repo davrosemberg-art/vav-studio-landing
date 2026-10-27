@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Le Studio de Voyage avec Vue : un média, un studio d'experts et un club au service de l'hôtellerie indépendante.">
+<meta name="description" content="Le Studio Voyage avec Vue : soulager l’instant T, structurer le long terme. Création d’images et accompagnement pour l’hôtellerie indépendante.">
 <style>:root{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Le Studio · Voyage avec Vue</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -374,6 +374,38 @@ input,select,textarea{border:1px solid var(--ink)}
 .vis .tagline{z-index:1;text-shadow:0 1px 8px rgba(0,0,0,.45)}
 .slot.has-media{background:var(--ink)}
 .slot.has-media figcaption{position:relative;z-index:1}
+
+/* V2 : wording du site pro, Nid des Vosges, carnet de veille, contact */
+.toc ol{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+@media (max-width:900px){.toc ol{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (max-width:600px){.toc ol{grid-template-columns:1fr!important}}
+.refs{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+@media (max-width:1000px){.refs{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (max-width:520px){.refs{grid-template-columns:1fr!important}}
+.ref .obj{font-size:.9rem;line-height:1.45;opacity:.9}
+.ref .acc{margin-top:auto;padding-top:.5rem;font-family:var(--mono,"Space Mono",monospace);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:inherit}
+.ref .txt{flex:1}
+.refs-cta{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.7rem}
+.edito .lead{font-weight:700}
+.carnet{background:var(--c-eco,#E4EAEB);box-shadow:0 0 0 100vmax var(--c-eco,#E4EAEB);clip-path:inset(0 -100vmax)}
+.notes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem;margin-top:2.5rem}
+.note{min-width:0;border-top:1px solid var(--ink);padding-top:.9rem;display:flex;flex-direction:column;gap:.55rem}
+.note .ph{aspect-ratio:4/5;overflow:hidden;background:var(--ink);position:relative}
+.note .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.note h3{font-size:1.25rem;line-height:1.1}
+.note p{font-size:.95rem}
+.note .tag{font-family:var(--mono,"Space Mono",monospace);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--deep)}
+.veille{margin-top:2rem;background:var(--ink);color:var(--cream);padding:1.6rem 1.8rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:1.5rem 2.5rem;align-items:start}
+.veille h3{font-size:clamp(1.5rem,3vw,2.1rem)}
+.veille ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+.veille li{border-top:1px solid #F7F3EE55;padding-top:.7rem;font-size:.95rem}
+.veille li b{display:block;font-family:var(--mono,"Space Mono",monospace);font-weight:400;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);margin-bottom:.3rem}
+.veille .btn{background:var(--pink);color:var(--ink);border-color:var(--pink)}
+@media (max-width:900px){.notes{grid-template-columns:repeat(2,minmax(0,1fr))}.veille{grid-template-columns:1fr}.veille ol{grid-template-columns:1fr}}
+@media (max-width:520px){.notes{grid-template-columns:1fr}}
+.contact-box{margin-top:2rem;max-width:46rem;background:var(--cream);border:1px solid var(--ink);padding:1.6rem 1.8rem;display:flex;flex-direction:column;gap:1rem;align-items:flex-start}
+.contact-box p{font-size:1.1rem}
+.contact-box .small{font-size:.9rem;opacity:.8}
 </style>
 </head>
 <body>
@@ -381,7 +413,7 @@ input,select,textarea{border:1px solid var(--ink)}
 <header class="hero" id="top">
   <img class="hero-img" src="img/hero-labarthe.jpg" alt="La maison en pierre et la piscine du Domaine de Labarthe, dans le Lot">
   <div class="hero-in wrap">
-    <p class="hero-k">Voyage avec Vue · Le Studio</p>
+    <p class="hero-k">Voyage avec Vue · La vue qui change tout</p>
     <h1 class="hero-t">Le Studio révèle votre lieu</h1>
     <a class="hero-down" href="#edito">Découvrir ↓</a>
   </div>
@@ -391,12 +423,13 @@ input,select,textarea{border:1px solid var(--ink)}
 <nav class="toc" aria-label="Sommaire">
   <div class="wrap">
     <ol>
-      <li style="--c:var(--c-edito)"><a href="#edito"><span class="n">01</span><span class="t">Édito<i>Pourquoi on fait ça</i></span></a></li>
+      <li style="--c:var(--c-edito)"><a href="#edito"><span class="n">01</span><span class="t">Édito<i>Soulager l'instant T</i></span></a></li>
       <li style="--c:var(--c-dossier)"><a href="#dossier"><span class="n">02</span><span class="t">Le dossier<i>Votre lieu, vos images</i></span></a></li>
-      <li style="--c:var(--c-eco)"><a href="#ecosysteme"><span class="n">03</span><span class="t">L'écosystème<i>Un média, un studio, un club</i></span></a></li>
-      <li style="--c:var(--c-portraits)"><a href="#portraits"><span class="n">04</span><span class="t">Portraits<i>Lieux et images</i></span></a></li>
-      <li style="--c:var(--c-carte)"><a href="#carte"><span class="n">05</span><span class="t">Le parcours<i>Rejoindre, révéler, grandir</i></span></a></li>
-      <li style="--c:var(--c-redac)"><a href="#redaction"><span class="n">06</span><span class="t">La rédaction<i>Nous écrire</i></span></a></li>
+      <li style="--c:var(--c-eco)"><a href="#ecosysteme"><span class="n">03</span><span class="t">L'écosystème<i>La Collection, le Studio, le Club</i></span></a></li>
+      <li style="--c:var(--c-portraits)"><a href="#portraits"><span class="n">04</span><span class="t">Références<i>Lieux et images</i></span></a></li>
+      <li style="--c:var(--c-carte)"><a href="#carte"><span class="n">05</span><span class="t">Le parcours<i>Création et stratégie</i></span></a></li>
+      <li style="--c:var(--c-eco)"><a href="#carnet"><span class="n">06</span><span class="t">Le carnet<i>Territoires et environnement</i></span></a></li>
+      <li style="--c:var(--c-redac)"><a href="#redaction"><span class="n">07</span><span class="t">Nous contacter<i>Croisons nos regards</i></span></a></li>
     </ol>
   </div>
 </nav>
@@ -405,14 +438,14 @@ input,select,textarea{border:1px solid var(--ink)}
 <section class="wrap" id="edito">
   <span class="rub"><span class="star">✶</span> Édito</span>
   <div class="edito">
-    <h2>On vient, <span class="serif">on s'émerveille,</span> on raconte.</h2>
+    <h2>Soulager l’instant T, <span class="serif">structurer le long terme.</span></h2>
     <div>
       <div class="body">
-        <p>On passe nos journées dans des lieux de vie : des maisons d'hôtes au bout d'un chemin, des hôtels de village, des gîtes qui sentent le bois et le café. Chaque fois, la même chose nous frappe : ces lieux sont bien plus beaux que ce qu'ils montrent.</p>
-        <p>Le Studio est né de là. On séjourne sur place, on rencontre ceux qui font vivre le lieu, on regarde le territoire autour. Puis on raconte, en photo, en vidéo et en mots, avec un objectif simple : que les voyageurs aient envie de venir et réservent chez vous, en direct.</p>
-        <p>Derrière, une équipe d'experts de l'hospitalité, aux quatre coins de la France, et un média voyage qui diffuse vos histoires. Rien n'est généré. Tout a été vécu.</p>
+        <p class="lead">Le Studio Voyage avec Vue accompagne les hôteliers indépendants, les maisons d’hôtes, les gîtes, les hébergements insolites, les campings, finalement, là où on peut dormir, dans leurs besoins structurels, opérationnels et/ou ponctuels.</p>
+        <p>Nous concevons une bibliothèque de contenus (photo, vidéo, etc.) guidée par une direction artistique qui en assure la cohérence, la lisibilité et la durabilité sur l’ensemble de vos canaux.</p>
+        <p>Au-delà de la production, le Studio intervient comme un partenaire d’accompagnement : gestion des réseaux sociaux, audit du positionnement, renfort commercial, stratégie marketing. L’objectif est double : soulager l’instant T et structurer le long terme, en assurant la cohérence de vos outils, de vos messages et de votre visibilité globale.</p>
       </div>
-      <p class="sign">L'équipe du Studio</p>
+      <p class="sign">Le Studio Voyage avec Vue</p>
     </div>
   </div>
 </section>
@@ -437,24 +470,22 @@ input,select,textarea{border:1px solid var(--ink)}
 <!-- ECOSYSTEME -->
 <section class="wrap" id="ecosysteme">
   <span class="rub"><span class="star">✶</span> L'écosystème</span>
-  <h2>Un média, un studio, <span class="serif">un club.</span></h2>
-  <p class="chapo">Une seule équipe pour révéler votre adresse, la raconter et la faire connaître. Chacun son rôle, tous au service de votre lieu.</p>
+  <h2>La Collection, le Studio, <span class="serif">le Club.</span></h2>
+  <p class="chapo">Voyage avec Vue accompagne les acteurs de l’hôtellerie indépendante, majoritairement en France et à l’étranger : hôtels, gîtes, maisons d’hôtes, hébergements insolites, campings, à révéler leur singularité à travers la Collection et leur image à travers le Studio.</p>
   <div class="eco-grid">
     <article class="pillar-card">
-      <span class="role">Faire connaître</span>
-      <h3>Le média</h3>
-      <p>Voyage avec Vue devient le porte-parole de votre adresse : reportages, newsletter, réseaux, et des relais dans la presse.</p>
+      <span class="role">Révèle votre adresse</span>
+      <h3>La Collection</h3>
+      <p>Nous valorisons la singularité de chaque adresse. La Collection offre une visibilité éditoriale portée par notre média et les différents dispositifs de Voyage avec Vue : les réseaux sociaux, le site internet, la newsletter, les activations marketing.</p>
     </article>
     <article class="pillar-card">
-      <span class="role">Révéler et raconter</span>
+      <span class="role">Révèle votre image</span>
       <h3>Le Studio</h3>
-      <p>Une équipe d'experts seniors de l'hospitalité et de la communication :</p>
+      <p>Nous créons des images qui racontent votre lieu et vous accompagnons au quotidien. Conseil, contenu : une équipe présente, de la stratégie à l’opérationnel.</p>
       <ul>
-        <li>Conseil, commercialisation et stratégie</li>
-        <li>Journalisme et rédaction</li>
-        <li>Photo, vidéo et drone</li>
-        <li>Direction artistique et destinations dessinées</li>
-        <li>Relations presse</li>
+        <li>Création : shooting photo, vidéos et capsules, direction artistique 360</li>
+        <li>Stratégie : communication digitale, renfort commercial</li>
+        <li>Backoffice externe et hotline</li>
       </ul>
     </article>
     <article class="pillar-card">
@@ -465,7 +496,7 @@ input,select,textarea{border:1px solid var(--ink)}
   </div>
   <div class="eco-center">
     <h3>Au centre : votre adresse</h3>
-    <p>La même équipe la révèle, la raconte et la fait connaître.</p>
+    <p>La vue qui change tout : la même équipe la révèle, la raconte et la fait connaître.</p>
   </div>
 </section>
 
@@ -484,13 +515,15 @@ input,select,textarea{border:1px solid var(--ink)}
 <!-- PORTRAITS -->
 <section class="portraits grain" id="portraits">
   <div class="wrap">
-    <span class="rub"><span class="star">✶</span> Portraits</span>
-    <h2>Ils nous ont ouvert <span class="serif">leurs portes.</span></h2>
+    <span class="rub"><span class="star">✶</span> Références</span>
+    <h2>Notre point de Vue, <span class="serif">en images.</span></h2>
     <div class="refs">
-      <article class="ref"><div class="vis v1"><img class="fill" src="img/service-terrasse.jpg" alt="Service du petit-déjeuner en terrasse au C4" loading="lazy"></div><div class="txt"><span class="place">Ardèche</span><h3>Le C4</h3></div></article>
-      <article class="ref"><div class="vis v3"><img class="fill" src="img/labarthe-maison-piscine.jpg" alt="Le Domaine de Labarthe et sa piscine" loading="lazy"></div><div class="txt"><span class="place">Lot</span><h3>Domaine de Labarthe</h3></div></article>
-      <article class="ref"><div class="vis v5"><img class="fill" src="img/mi-cour.jpg" alt="La cour intérieure des Maisons Imaginaires" loading="lazy"></div><div class="txt"><span class="place">Bouches-du-Rhône</span><h3>Les Maisons Imaginaires</h3></div></article>
+      <article class="ref"><div class="vis v1"><img class="fill" src="img/service-terrasse.jpg" alt="Service du petit-déjeuner en terrasse au C4" loading="lazy"></div><div class="txt"><span class="place">Ardèche · gîtes et restaurant emblématique</span><h3>Le Domaine le C4</h3><p class="obj">Objectif : mieux communiquer pour mieux optimiser les réservations des gîtes.</p><a class="acc press-link" href="https://www.instagram.com/domainelec4/">Voir le compte</a></div></article>
+      <article class="ref"><div class="vis v3"><img class="fill" src="img/labarthe-maison-piscine.jpg" alt="Le Domaine de Labarthe et sa piscine" loading="lazy"></div><div class="txt"><span class="place">Lot · maison hôtelière au cœur du Quercy</span><h3>Le Domaine de Labarthe</h3><p class="obj">Objectif : soutenir les propriétaires investis mais confrontés à un marché exigeant.</p><a class="acc press-link" href="https://www.instagram.com/domainedelabarthe/">Voir le compte</a></div></article>
+      <article class="ref"><div class="vis v5"><img class="fill" src="img/mi-cour.jpg" alt="La cour intérieure des Maisons Imaginaires" loading="lazy"></div><div class="txt"><span class="place">Bouches-du-Rhône</span><h3>Les Maisons Imaginaires</h3><p class="obj">Une bibliothèque de contenus qui traduit la singularité de l’adresse.</p></div></article>
+      <article class="ref"><div class="vis v2"><video class="fill" src="video/nid-reel.mp4" poster="video/nid-reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Reel du Nid des Vosges : cabanes perchées dans la forêt"></video></div><div class="txt"><span class="place">Vosges · cabanes dans les arbres</span><h3>Le Nid des Vosges</h3><p class="obj">Un reel de 30 secondes tourné sur place : la forêt, les cabanes, le temps qui ralentit.</p></div></article>
     </div>
+    <div class="refs-cta"><a class="btn" href="https://pro.voyageavecvue.com/references">Voir nos références</a><a class="btn alt" href="https://pro.voyageavecvue.com/references">Nos réalisations vidéos</a></div>
     <div class="gal-head">
       <h3>En images</h3>
       <p>Extraits de nos tournages : photos et vidéos des lieux qu'on a racontés.</p>
@@ -501,6 +534,7 @@ input,select,textarea{border:1px solid var(--ink)}
       <figure class="slot has-media"><img class="fill" src="img/mi-citrons.jpg" alt="Citrons alignés sur une étagère des Maisons Imaginaires" loading="lazy"><figcaption>Photo · un détail</figcaption></figure>
       <figure class="slot has-media"><img class="fill" src="img/mi-fenetre-main.jpg" alt="Une main ouvre une fenêtre sur la lumière du matin" loading="lazy"><figcaption>Photo · un moment vécu</figcaption></figure>
       <figure class="slot has-media"><video class="fill" src="video/canoe.mp4" poster="video/canoe-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Canoë sur le Chassezac"></video><figcaption>Vidéo · le territoire</figcaption></figure>
+      <figure class="slot has-media"><img class="fill" src="img/nid-cabane.jpg" alt="Cabanes perchées du Nid des Vosges, au milieu des pins" loading="lazy"><figcaption>Photo · le Nid des Vosges</figcaption></figure>
       <figure class="slot video has-media"><video class="fill" src="video/pate-vertical.mp4" poster="video/pate-vertical-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Pâte à pizza travaillée à la main au C4"></video><figcaption>Vidéo · format vertical</figcaption></figure>
     </div>
   </div>
@@ -517,8 +551,8 @@ input,select,textarea{border:1px solid var(--ink)}
       <div class="strip"><figure class="it r916"><video src="video/dessin-anime.mp4" poster="video/dessin-anime-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Aquarelle animée d’une cabane dans les arbres"></video></figure><figure class="it r45"><img src="img/formats/f01.jpg" alt="Aquarelle des Cabanes de Salagnac" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f02.jpg" alt="Aquarelle : temps calme dans la cabane" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f03.jpg" alt="Aquarelle : herbier et curiosités de la forêt" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f04.jpg" alt="Aquarelle : une terrasse en bois au milieu des arbres" loading="lazy"></figure></div>
     </article>
     <article class="fmt">
-      <div class="fmt-txt"><span class="cat">Réseaux sociaux</span><h3>Stories et réels</h3><p>Des formats verticaux courts, tournés sur place et montés pour Instagram. Chacun renvoie vers l'adresse et sa réservation.</p><p class="where">Publiés sur les comptes de Voyage avec Vue</p></div>
-      <div class="strip"><figure class="it r916"><video src="video/story-lieu.mp4" poster="video/story-lieu-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Story vidéo : visite d’un intérieur ouvert sur le jardin"></video></figure><figure class="it r916"><img src="img/formats/f11.jpg" alt="Story : faire une virée à deux, au bord d’une piscine" loading="lazy"></figure></div>
+      <div class="fmt-txt"><span class="cat">Réseaux sociaux</span><h3>Stories et réels</h3><p>Des formats verticaux courts, tournés sur place et montés pour Instagram. Chacun renvoie vers l'adresse et sa réservation.</p><p class="where">Ici : le Nid des Vosges, et une story de lieu</p></div>
+      <div class="strip"><figure class="it r916"><video src="video/nid-reel.mp4" poster="video/nid-reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Reel du Nid des Vosges"></video></figure><figure class="it r916"><video src="video/story-lieu.mp4" poster="video/story-lieu-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Story vidéo : visite d’un intérieur ouvert sur le jardin"></video></figure><figure class="it r916"><img src="img/formats/f11.jpg" alt="Story : faire une virée à deux, au bord d’une piscine" loading="lazy"></figure></div>
     </article>
     <article class="fmt">
       <div class="fmt-txt"><span class="cat">Newsletter</span><h3>Une adresse à la une</h3><p>Chaque mois, une adresse en couverture et la sélection « Vu &amp; Aimé », relayées en story le jour de l'envoi.</p><p class="where">Ici : Grand Hôtel du Golfe, Les Fleurines</p></div>
@@ -538,46 +572,59 @@ input,select,textarea{border:1px solid var(--ink)}
   <p class="chapo">Chaque prestation est pensée pour votre retour sur investissement : plus de réservations en direct, moins de commissions, des clients qui reviennent. On avance avec chaque adresse à son rythme, avec un seul interlocuteur.</p>
   <div class="offers">
     <article class="offer">
-      <div class="head"><span class="step">Étape 1</span><h3>Rejoindre</h3><p class="for">Entrer dans l'écosystème Voyage avec Vue.</p></div>
-      <div class="sub"><h4>La Collection</h4><p>Votre adresse rejoint la sélection de Voyage avec Vue et devient visible auprès de son audience.</p><p class="tarif">420 € HT / an</p></div>
+      <div class="head"><span class="step">Étape 1 · La Collection</span><h3>Rejoindre</h3><p class="for">Révèle votre adresse.</p></div>
+      <div class="sub"><h4>La Collection</h4><p>Une visibilité éditoriale portée par notre média : les réseaux sociaux, le site internet, la newsletter, les activations marketing.</p><p class="tarif">420 € HT / an</p></div>
     </article>
     <article class="offer">
-      <div class="head"><span class="step">Étape 2</span><h3>Révéler</h3><p class="for">Montrer votre lieu tel qu'on le vit.</p></div>
-      <div class="sub"><h4>Raconter le lieu</h4><p>Reportage photo, vidéos et capsules, récit écrit, portrait publié sur Voyage avec Vue.</p><p class="tarif">Sur devis</p></div>
-      <div class="sub"><h4>Destinations dessinées</h4><p>Votre lieu et son territoire racontés par le dessin.</p><p class="tarif">Sur devis</p></div>
-      <div class="sub"><h4>Le livret d’accueil</h4><p>Un livret dessiné ou mis en page avec les images de votre lieu : l’histoire de la maison, vos adresses, une balade, l’invitation à revenir. Imprimé par notre partenaire d’impression.</p><p class="tarif">Sur devis</p></div>
+      <div class="head"><span class="step">Étape 2 · Création</span><h3>Révéler</h3><p class="for">Révèle votre image.</p></div>
+      <div class="sub"><h4>Shooting photo</h4><p>Une bibliothèque de contenus mixant les expériences, la singularité du lieu et le territoire. 100 images livrées, pour près de 12 mois de contenu.</p><p class="tarif">Sur devis</p></div>
+      <div class="sub"><h4>Vidéos et capsules immersives</h4><p>Capsules, formats longs adaptés Reel ou paysage, tournages avec casting pour vos campagnes.</p><p class="tarif">Sur devis</p></div>
+      <div class="sub"><h4>Direction artistique 360</h4><p>Storytelling, brand content, charte graphique, destinations dessinées, intention visuelle par canal et stratégie de contenu.</p><p class="tarif">Sur devis</p></div>
     </article>
     <article class="offer">
-      <div class="head"><span class="step">Étape 3</span><h3>Faire grandir</h3><p class="for">Communiquer toute l'année et vendre mieux.</p></div>
-      <div class="sub"><h4>Accompagnement</h4><p>Planning éditorial, réseaux sociaux, newsletters et mises à jour des plateformes.</p><p class="tarif">Sur devis</p></div>
-      <div class="sub"><h4>Stratégie et marge</h4><p>Positionnement, offres de séjour, partenariats avec agences et réceptifs, suivi des demandes.</p><p class="tarif">Sur devis</p></div>
+      <div class="head"><span class="step">Étape 3 · Stratégie</span><h3>Faire grandir</h3><p class="for">Soulager l’instant T, structurer le long terme.</p></div>
+      <div class="sub"><h4>Communication digitale</h4><p>Planning éditorial, réseaux sociaux, newsletters, parcours de réservation et e-mails automatisés. Durée minimale : 3 mois.</p><p class="tarif">Sur devis</p></div>
+      <div class="sub"><h4>Renfort commercial</h4><p>Offre loisirs ou événementiels, partenariats B2B avec agences et réceptifs, devis des demandes entrantes. Durée minimale : 6 mois.</p><p class="tarif">Sur devis</p></div>
+      <div class="sub"><h4>Backoffice externe et hotline</h4><p>Livret d’accueil, mises à jour des OTA, site web, rédaction d’articles, aides à la vente. Durée : quand c’est nécessaire !</p><p class="tarif">Sur devis</p></div>
     </article>
   </div>
   <div class="entry">
     <div><h3>On commence par un diagnostic</h3><p>20 minutes offertes pour regarder ensemble vos images, vos annonces et vos canaux de réservation. Vous repartez avec trois pistes concrètes, que vous travailliez avec nous ou non.</p></div>
-    <a class="btn" href="#redaction">Je réserve mon diagnostic</a>
+    <a class="btn" href="https://pro.voyageavecvue.com/#contact-us">Discuter de vos besoins</a>
+  </div>
+</section>
+
+<!-- LE CARNET -->
+<section class="wrap carnet" id="carnet">
+  <span class="rub"><span class="star">✶</span> Le carnet</span>
+  <h2>Territoires, lieux, <span class="serif">environnement.</span></h2>
+  <p class="chapo">Pour les professionnels qui nous suivent : ce qu’on observe sur le terrain, d’une adresse à l’autre. Comment un lieu dialogue avec son territoire, et pourquoi une vision environnementale forte devient un argument autant qu’une responsabilité.</p>
+  <div class="notes">
+    <article class="note"><div class="ph"><img src="img/nid-cabane-bois.jpg" alt="Une cabane en bois gris au milieu des sapins" loading="lazy"></div><span class="tag">Environnement</span><h3>Pourquoi intégrer une vision environnementale forte ?</h3><p>Ce que les voyageurs regardent désormais, ce que les labels exigent, et comment le dire sans greenwashing. Membres d’ATR depuis 2022, on partage ce qu’on applique.</p></article>
+    <article class="note"><div class="ph"><img src="img/collines.jpg" alt="Collines et vignes autour d’un domaine en Ardèche" loading="lazy"></div><span class="tag">Territoires</span><h3>Le gîte et son territoire</h3><p>Une rivière, un bois classé, des producteurs voisins : raconter ce qu’il y a autour, c’est donner une raison de venir et de rester plus longtemps.</p></article>
+    <article class="note"><div class="ph"><img src="img/nid-passerelle.jpg" alt="Passerelle en bois vers une cabane perchée" loading="lazy"></div><span class="tag">Insolite</span><h3>Dormir dans la nature, et la respecter</h3><p>Cabanes, tiny houses, lieux perchés : quand le décor est l’expérience, l’image et les usages doivent aller dans le même sens.</p></article>
+    <article class="note"><div class="ph"><img src="img/petit-dej.jpg" alt="Une table de petit-déjeuner dressée en terrasse" loading="lazy"></div><span class="tag">Passerelles</span><h3>Quand un lieu fait vivre ses voisins</h3><p>Table, gîtes, artisans, activités : relier les offres d’un même domaine et d’un même village, et le montrer.</p></article>
+  </div>
+  <div class="veille">
+    <div><h3>Un carnet de veille, un article par semaine</h3><p style="margin-top:.6rem">Nourri par notre veille et nos tournages, publié chaque semaine sur le site pour le référencement de ces sujets.</p><p style="margin-top:1rem"><a class="btn" href="https://pro.voyageavecvue.com/astuces-conseils-bonnes-pratiques-hotellerie-independante">Lire le blog</a></p></div>
+    <ol>
+      <li><b>01 · Veille</b>Presse tourisme, données des territoires, retours de nos adresses : on collecte et on trie chaque semaine.</li>
+      <li><b>02 · Rédaction</b>Un sujet retenu devient un article, illustré avec nos images et relu par l’équipe.</li>
+      <li><b>03 · Publication</b>Mise en ligne sur le site, reprise en newsletter et sur les réseaux, avec les mots-clés suivis.</li>
+    </ol>
   </div>
 </section>
 
 <!-- REDACTION -->
 <section class="redac grain" id="redaction">
   <div class="wrap">
-    <span class="rub"><span class="star">✶</span> La rédaction</span>
-    <h2>Parlons <span class="serif">de votre lieu.</span></h2>
-    <form class="form" id="leadForm" name="studio-contact" method="POST" action="/merci.html" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="studio-contact">
-      <p hidden><label>Ne pas remplir <input name="bot-field"></label></p>
-      <label for="f-name">Votre établissement<input id="f-name" name="name" required></label>
-      <label for="f-url">Site web du lieu<input id="f-url" name="url" type="url" inputmode="url" placeholder="https://"></label>
-      <label for="f-type">Type de lieu<select id="f-type" name="type"><option>Hôtel</option><option>Gîte</option><option>Chambres d'hôtes</option><option>Camping</option><option>Groupe hôtelier</option></select></label>
-      <label for="f-rooms">Chambres ou hébergements<input id="f-rooms" name="rooms" inputmode="numeric"></label>
-      <label for="f-need">Votre besoin<select id="f-need" name="need"><option>Des images et des vidéos</option><option>Une communication à l'année</option><option>Vendre davantage en direct</option><option>Je ne sais pas encore</option></select></label>
-      <label for="f-when">Quand ?<select id="f-when" name="when"><option>Cet hiver</option><option>Printemps 2027</option><option>Plus tard</option></select></label>
-      <label for="f-mail" class="full">Email<input id="f-mail" name="mail" type="email" required></label>
-      <label for="f-msg" class="full">Racontez-nous votre lieu en quelques mots<textarea id="f-msg" name="msg"></textarea></label>
-      <div class="full"><button class="btn" type="submit">Envoyer</button></div>
-      
-    </form>
+    <span class="rub"><span class="star">✶</span> Nous contacter</span>
+    <h2>Croisons <span class="serif">nos regards.</span></h2>
+    <div class="contact-box">
+      <p>Besoin de structurer ou de faire évoluer votre image ? Une question à nous poser, un projet à imaginer ensemble, une adresse à référencer ? Parlons-en ensemble.</p>
+      <a class="btn" href="https://pro.voyageavecvue.com/#contact-us">Nous contacter</a>
+      <p class="small">Le formulaire s’ouvre sur pro.voyageavecvue.com.</p>
+    </div>
   </div>
 </section>
 
