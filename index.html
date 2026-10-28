@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Le Studio Voyage avec Vue : soulager l’instant T, structurer le long terme. Création d’images et accompagnement pour l’hôtellerie indépendante.">
+<meta name="description" content="Le Studio Voyage avec Vue : images, destinations dessinées et accompagnement pour les lieux, les territoires et les marques du voyage.">
 <style>:root{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Le Studio · Voyage avec Vue</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -425,6 +425,103 @@ input,select,textarea{border:1px solid var(--ink)}
 .sub .tarif{margin-top:0;white-space:nowrap}
 .pillar-card p{font-size:1rem}
 .fmt-txt p{font-size:1rem}
+
+/* TUNNEL : trois publics */
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.6rem}
+.hero-ctas a{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:#F7F3EE;border:1px solid #F7F3EE;padding:.85rem 1.15rem .8rem;display:inline-flex;gap:.6rem;align-items:center;background:rgba(31,45,46,.25);backdrop-filter:blur(2px)}
+.hero-ctas a b{font-family:var(--display);font-weight:800;font-size:.95rem;letter-spacing:.02em}
+.hero-ctas a:hover{background:#F7F3EE;color:var(--ink)}
+.aud{padding-block:4.5rem;border-top:1px solid var(--ink)}
+.aud-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:2.5rem 3.5rem;align-items:start}
+.aud .num{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--deep)}
+.aud h2{margin-top:.6rem;font-size:clamp(1.9rem,3.6vw,2.9rem)}
+.proof.noimg{grid-template-columns:1fr;padding:1rem 1.2rem}
+.mini-k{display:block;margin-top:1.2rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+.mini{margin-top:.5rem}
+.aud .need{font-size:1.2rem;line-height:1.45;font-weight:300;margin-top:1rem;max-width:30rem}
+.aud .ctas{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.aud .for{font-family:var(--mono);font-size:.78rem;font-style:italic;margin-top:.9rem;opacity:.8}
+.offlist{border:1px solid var(--ink);background:var(--cream)}
+.offlist .sub{border-bottom:1px solid var(--ink)}
+.offlist .sub:last-child{border-bottom:0}
+.proof{margin-top:1rem;display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:1rem;align-items:center;background:var(--ink);color:var(--cream);padding:.8rem}
+.proof img{width:8.5rem;height:8.5rem;object-fit:cover;display:block}
+.proof .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--pink)}
+.proof b{display:block;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.1rem;margin:.25rem 0}
+.proof p{font-size:.92rem;opacity:.9}
+.proof a{color:inherit}
+.aud.lieux{background:#F7F3EE} .aud.terr{background:#E4EAEB} .aud.marq{background:#F2E6D8}
+.aud.terr,.aud.marq,.aud.lieux{box-shadow:0 0 0 100vmax var(--bg,transparent);clip-path:inset(0 -100vmax)}
+.aud.lieux{--bg:#F7F3EE} .aud.terr{--bg:#E4EAEB} .aud.marq{--bg:#F2E6D8}
+.mini{display:flex;gap:.5rem;margin-top:1rem;overflow-x:auto}
+.mini img{height:150px;width:auto;aspect-ratio:9/16;object-fit:cover;display:block}
+.final{background:var(--ink);color:var(--cream);padding-block:4rem}
+.final h2{color:var(--cream)}
+.final .rub{background:var(--pink);color:var(--ink)}
+.final-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2rem}
+.final-grid a{display:flex;flex-direction:column;gap:.4rem;border:1px solid #F7F3EE66;padding:1.3rem 1.3rem 1.2rem;color:var(--cream);text-decoration:none}
+.final-grid a:hover{background:var(--pink);color:var(--ink);border-color:var(--pink)}
+.final-grid .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.final-grid b{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.5rem;line-height:1}
+.final-grid span.go{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-top:.6rem}
+.refs-sec{padding-block:4rem}
+
+@media (max-width:900px){.aud-in{grid-template-columns:minmax(0,1fr)}.final-grid{grid-template-columns:minmax(0,1fr)}.aud h2{overflow-wrap:break-word;hyphens:auto}}
+@media (max-width:520px){.proof{grid-template-columns:5.5rem minmax(0,1fr)}.proof img{width:5.5rem;height:5.5rem}.hero-ctas a{width:100%;justify-content:space-between}}
+
+/* SIGNATURE : destinations dessinées */
+.dd{background:#FBF8E8;box-shadow:0 0 0 100vmax #FBF8E8;clip-path:inset(0 -100vmax);padding-block:5rem;position:relative}
+.dd-in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:3rem;align-items:center}
+.dd .rub{background:#7A9A6A;color:#FBF8E8}
+.dd h2{font-size:clamp(2rem,4vw,3.3rem)}
+.masonry:not(.all) .tile.more{display:none}
+.more-btn{display:flex;justify-content:center;margin-top:1.4rem}
+.masonry.all+.more-btn{display:none}
+.dd h2 .serif{color:#7A9A6A}
+.dd .lead{font-size:1.25rem;line-height:1.45;font-weight:300;margin-top:1.1rem;max-width:30rem}
+.uses{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.3rem;padding:0;list-style:none}
+.uses li{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--ink);padding:.35rem .6rem;border-radius:999px;background:#FFFFFF80}
+.dd .ctas{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.dd .where{font-family:var(--mono);font-style:italic;font-size:.78rem;margin-top:1rem;opacity:.8}
+.collage{position:relative;height:34rem}
+.collage figure{position:absolute;margin:0;background:#fff;padding:.5rem .5rem 1.6rem;box-shadow:0 14px 30px rgba(31,45,46,.18),0 2px 4px rgba(31,45,46,.12)}
+.collage figure img,.collage figure video{display:block;width:100%;height:100%;object-fit:cover}
+.collage figcaption{position:absolute;left:.6rem;bottom:.35rem;font-family:var(--mono);font-style:italic;font-size:.72rem}
+.collage .c1{left:0;top:2rem;width:15rem;height:20rem;transform:rotate(-4deg);z-index:2}
+.collage .c2{left:13.5rem;top:0;width:13.5rem;height:24rem;transform:rotate(2deg);z-index:3}
+.collage .c3{right:0;top:3rem;width:13rem;height:16rem;transform:rotate(5deg);z-index:1}
+.collage .c4{left:5rem;bottom:0;width:12rem;height:12rem;transform:rotate(3deg);z-index:4}
+.collage .c5{right:2rem;bottom:.5rem;width:13rem;height:13rem;transform:rotate(-3deg);z-index:4}
+@media (max-width:900px){.dd-in{grid-template-columns:minmax(0,1fr)}.collage{height:auto;display:flex;gap:.8rem;overflow-x:auto;padding:1rem .2rem 1.4rem;scroll-snap-type:x mandatory}.collage figure{position:relative;inset:auto!important;transform:none!important;flex:none;width:13rem!important;height:17rem!important;scroll-snap-align:start}}
+/* AQUARELLES : touches graphiques */
+.aq{position:absolute;pointer-events:none;z-index:0;height:auto}
+.aud,.final,#edito{position:relative}
+.aud .wrap,.final .wrap{position:relative;z-index:1}
+@media (max-width:700px){.aq{width:64px!important;opacity:.85}}
+/* NOS CRÉATIONS */
+.crea{padding-block:4.5rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.6rem}
+.chips button{appearance:none;cursor:pointer;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:.5rem .8rem;border-radius:999px}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
+.chips button span{opacity:.6;margin-left:.3rem}
+.masonry{columns:4 15rem;column-gap:.9rem;margin-top:1.6rem}
+.tile{break-inside:avoid;margin:0 0 .9rem;position:relative;cursor:zoom-in;display:block;width:100%;padding:0;border:0;background:var(--ink);text-align:left}
+.tile img{display:block;width:100%;height:auto}
+.tile .cap{position:absolute;left:0;right:0;bottom:0;padding:1.6rem .7rem .55rem;background:linear-gradient(transparent,rgba(20,28,29,.75));color:#F7F3EE;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;opacity:0;transition:opacity .2s}
+.tile:hover .cap,.tile:focus-visible .cap{opacity:1}
+.tile .cap b{display:block;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:.95rem;letter-spacing:.02em}
+.tile .play{position:absolute;inset:0;margin:auto;width:3.4rem;height:3.4rem;border-radius:50%;border:2px solid #F7F3EE;display:grid;place-items:center;background:rgba(20,28,29,.35)}
+.tile[hidden]{display:none}
+@media (hover:none){.tile .cap{opacity:1}}
+.lb{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100vw;height:100vh}
+.lb::backdrop{background:rgba(15,22,23,.92)}
+.lb-in{position:fixed;inset:0;display:grid;grid-template-rows:minmax(0,1fr) auto;padding:3.5rem 1rem 1rem;box-sizing:border-box}
+.lb-media{display:flex;align-items:center;justify-content:center;min-height:0}
+.lb-media img,.lb-media video{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.lb-cap{color:#F7F3EE;text-align:center;font-family:var(--mono);font-size:.8rem;padding-top:.8rem}
+.lb-cap b{font-family:var(--display);font-weight:800;text-transform:uppercase;margin-right:.5rem}
+.lb button{position:fixed;appearance:none;border:1px solid #F7F3EE88;background:rgba(15,22,23,.5);color:#F7F3EE;width:2.8rem;height:2.8rem;border-radius:50%;cursor:pointer;font-size:1.2rem;display:grid;place-items:center}
+.lb .x{top:.8rem;right:.8rem}.lb .prev{left:.8rem;top:50%}.lb .next{right:.8rem;top:50%}
 </style>
 </head>
 <body>
@@ -434,23 +531,27 @@ input,select,textarea{border:1px solid var(--ink)}
   <div class="hero-in wrap">
     <p class="hero-k">Voyage avec Vue · La vue qui change tout</p>
     <h1 class="hero-t">Le Studio révèle votre lieu</h1>
-    <a class="hero-down" href="#edito">Découvrir ↓</a>
+    <nav class="hero-ctas" aria-label="Vous êtes">
+      <a href="#lieux">Vous êtes <b>un lieu</b> ↓</a>
+      <a href="#territoires">Vous êtes <b>un territoire</b> ↓</a>
+      <a href="#marques">Vous êtes <b>une marque</b> ↓</a>
+      <a href="#creations">Voir <b>nos créations</b> ↓</a>
+    </nav>
   </div>
 </header>
 
-<!-- SOMMAIRE -->
-<nav class="toc" aria-label="Sommaire">
+<!-- PREUVES -->
+<div class="proofs" role="region" aria-label="Nos chiffres et relais">
   <div class="wrap">
-    <ol>
-      <li style="--c:var(--c-edito)"><a href="#edito"><span class="n">01</span><span class="t">Édito<i>Soulager l'instant T</i></span></a></li>
-      <li style="--c:var(--c-dossier)"><a href="#dossier"><span class="n">02</span><span class="t">Le dossier<i>Votre lieu, vos images</i></span></a></li>
-      <li style="--c:var(--c-eco)"><a href="#ecosysteme"><span class="n">03</span><span class="t">L'écosystème<i>La Collection, le Studio, le Club</i></span></a></li>
-      <li style="--c:var(--c-portraits)"><a href="#portraits"><span class="n">04</span><span class="t">Références<i>Lieux et images</i></span></a></li>
-      <li style="--c:var(--c-carte)"><a href="#carte"><span class="n">05</span><span class="t">Le parcours<i>Création et stratégie</i></span></a></li>
-      <li style="--c:var(--c-redac)"><a href="#redaction"><span class="n">06</span><span class="t">Nous contacter<i>Croisons nos regards</i></span></a></li>
-    </ol>
+    <ul>
+      <li><b>300 000</b><span>visites par an sur Voyage avec Vue</span></li>
+      <li><b>42 %</b><span>d'ouverture pour notre newsletter</span></li>
+      <li><b><a class="press-link" href="https://www.lopinion.fr/auteur/voyage-avec-vue">L'Opinion</a> · <a class="press-link" href="https://www.traits-dcomagazine.fr/author/voyage-avec-vue/">Trait's D'Co</a></b><span>nos rubriques dans la presse</span></li>
+      <li><b>Membre ATR</b><span>Agir pour un Tourisme Responsable, depuis 2022</span></li>
+    </ul>
   </div>
-</nav>
+</div>
+
 
 <!-- EDITO -->
 <section class="wrap" id="edito">
@@ -470,67 +571,87 @@ input,select,textarea{border:1px solid var(--ink)}
   </div>
 </section>
 
-<!-- DOSSIER -->
-<section class="dossier grain" id="dossier">
-  <div class="wrap">
-    <span class="rub"><span class="star">✶</span> Le dossier</span>
-    <h2>Votre lieu est plus beau <span class="serif">que vos images.</span></h2>
-    <div class="posters">
-      <div class="poster"><span class="big">01</span><h3>Des photos qui ne disent pas tout</h3></div>
-      <div class="poster"><span class="big">02</span><h3>Les plateformes gardent la relation</h3></div>
-      <div class="poster"><span class="big">03</span><h3>Pas le temps de raconter</h3></div>
+
+<!-- SIGNATURE -->
+<section class="wrap dd" id="dessinees">
+  <img class="aq" src="img/aq/brindille.png" alt="" style="top:1.5rem;right:2%;width:150px">
+  <div class="dd-in">
+    <div>
+      <span class="rub"><span class="star">✶</span> Notre signature</span>
+      <h2>Les destinations <span class="serif">dessinées.</span></h2>
+      <p class="lead">Un lieu, un territoire, raconté à l’aquarelle. Une même série vit partout, du site au livret d’accueil.</p>
+      <ul class="uses"><li>Site web</li><li>Réseaux</li><li>Livret d’accueil</li><li>Affiche</li><li>Carte du territoire</li><li>Animation</li></ul>
+      <div class="ctas"><a class="btn" href="https://pro.voyageavecvue.com/#contact-us">Imaginer la vôtre</a><a class="btn alt" href="#creations" data-filter="aquarelle">Voir la série</a></div>
+      <p class="where">Ici : les Cabanes de Salagnac</p>
     </div>
-    <div class="answer">
-      <p>Notre réponse : un récit vrai de votre lieu, et la réservation qui revient chez vous.</p>
-      <a class="btn" href="#carte">Voir le parcours</a>
+    <div class="collage" aria-label="Aquarelles des Cabanes de Salagnac">
+      <figure class="c1"><img src="img/formats/f01.jpg" alt="Aquarelle des Cabanes de Salagnac" loading="lazy"><figcaption>La cabane</figcaption></figure>
+      <figure class="c2"><video src="video/dessin-anime.mp4" poster="video/dessin-anime-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Aquarelle animée d’une cabane dans les arbres"></video><figcaption>En mouvement</figcaption></figure>
+      <figure class="c3"><img src="img/formats/f04.jpg" alt="Aquarelle : une terrasse en bois au milieu des arbres" loading="lazy"><figcaption>Tout en bois</figcaption></figure>
+      <figure class="c4"><img src="img/formats/f02.jpg" alt="Aquarelle : temps calme dans la cabane" loading="lazy" style="object-position:center 30%"><figcaption>Temps calme</figcaption></figure>
+      <figure class="c5"><img src="img/formats/f03.jpg" alt="Aquarelle : herbier et surprises de la forêt" loading="lazy"><figcaption>Herbier</figcaption></figure>
     </div>
   </div>
 </section>
 
-<!-- ECOSYSTEME -->
-<section class="wrap" id="ecosysteme">
-  <span class="rub"><span class="star">✶</span> L'écosystème</span>
-  <h2>La Collection, le Studio, <span class="serif">le Club.</span></h2>
-  <p class="chapo">Révéler votre adresse, révéler votre image, relier les marques du voyage.</p>
-  <div class="eco-grid">
-    <article class="pillar-card">
-      <span class="role">Révèle votre adresse</span>
-      <h3>La Collection</h3>
-      <p>Une visibilité éditoriale portée par notre média.</p>
-      <details class="more"><summary>En savoir plus</summary><div><p>Nous valorisons la singularité de chaque adresse. La Collection offre une visibilité éditoriale portée par notre média et les différents dispositifs de Voyage avec Vue : les réseaux sociaux, le site internet, la newsletter, les activations marketing.</p></div></details>
-    </article>
-    <article class="pillar-card">
-      <span class="role">Révèle votre image</span>
-      <h3>Le Studio</h3>
-      <p>Des images qui racontent votre lieu, une équipe présente au quotidien.</p>
-      <details class="more"><summary>En savoir plus</summary><div><p>Nous créons des images qui racontent votre lieu et vous accompagnons au quotidien. Conseil, contenu : une équipe présente, de la stratégie à l’opérationnel.</p></div></details>
-    </article>
-    <article class="pillar-card">
-      <span class="role">Relier</span>
-      <h3>Le Club VAV</h3>
-      <p>Les marques voyage de notre écosystème, mises en avant auprès de nos adresses.</p>
-    </article>
+<!-- LIEUX -->
+<section class="aud lieux" id="lieux"><img class="aq" src="img/aq/paquerettes.png" alt="" style="top:1.2rem;right:3%;width:150px"><div class="wrap aud-in">
+  <div>
+    <span class="num">01 · Vous êtes un lieu</span>
+    <h2>Révéler votre adresse, <span class="serif">et votre image.</span></h2>
+    <p class="need">Hôtels, gîtes, maisons d’hôtes, campings : être vus par les bons voyageurs, avec des images à la hauteur du lieu.</p>
+    <div class="ctas"><a class="btn" href="https://pro.voyageavecvue.com/la-collection-voyage-avec-vue#adhesion">Rejoindre la Collection</a><a class="btn alt" href="https://pro.voyageavecvue.com/#contact-us">Discuter de vos besoins</a></div>
+    <p class="for">Diagnostic de 20 minutes offert.</p>
   </div>
-  <div class="eco-center">
-    <h3>Au centre : votre adresse</h3>
-    <p>La vue qui change tout.</p>
+  <div>
+    <div class="offlist">
+      <div class="sub"><details><summary><h4>La Collection</h4><span class="tarif">420 € HT / an</span></summary><p>Une visibilité éditoriale portée par notre média : les réseaux sociaux, le site internet, la newsletter, les activations marketing.</p></details></div>
+      <div class="sub"><details><summary><h4>Création</h4><span class="tarif">Sur devis</span></summary><p>Shooting photo (100 images, près de 12 mois de contenu), vidéos et capsules immersives, destinations dessinées, direction artistique 360.</p></details></div>
+      <div class="sub"><details><summary><h4>Accompagnement</h4><span class="tarif">Sur devis</span></summary><p>Communication digitale (3 mois minimum), renfort commercial (6 mois minimum), backoffice externe et hotline.</p></details></div>
+    </div>
+    <div class="proof"><img src="img/service-terrasse.jpg" alt="Service du petit-déjeuner en terrasse au Domaine le C4" loading="lazy"><div><span class="k">Référence</span><b>Le Domaine le C4</b><p>Gîtes et restaurant emblématique en Ardèche : mieux communiquer pour mieux remplir les gîtes.</p></div></div>
   </div>
-</section>
+</div></section>
 
-<!-- PREUVES -->
-<div class="proofs" role="region" aria-label="Nos chiffres et relais">
-  <div class="wrap">
-    <ul>
-      <li><b>300 000</b><span>visites par an sur Voyage avec Vue</span></li>
-      <li><b>42 %</b><span>d'ouverture pour notre newsletter</span></li>
-      <li><b><a class="press-link" href="https://www.lopinion.fr/auteur/voyage-avec-vue">L'Opinion</a> · <a class="press-link" href="https://www.traits-dcomagazine.fr/author/voyage-avec-vue/">Trait's D'Co</a></b><span>nos rubriques dans la presse</span></li>
-      <li><b>Membre ATR</b><span>Agir pour un Tourisme Responsable, depuis 2022</span></li>
-    </ul>
+<!-- TERRITOIRES -->
+<section class="aud terr" id="territoires"><img class="aq" src="img/aq/fougere.png" alt="" style="top:1rem;right:2%;width:130px;opacity:.9"><div class="wrap aud-in">
+  <div>
+    <span class="num">02 · Vous êtes un territoire</span>
+    <h2>Raconter une destination, <span class="serif">par ceux qui la vivent.</span></h2>
+    <p class="need">Offices de tourisme, destinations : des reportages vécus sur place, publiés dans notre média et livrés pour vos propres canaux.</p>
+    <div class="ctas"><a class="btn" href="https://pro.voyageavecvue.com/#contact-us">Proposer une collaboration</a></div>
   </div>
-</div>
+  <div>
+    <div class="offlist">
+      <div class="sub"><details><summary><h4>Reportage destination</h4><span class="tarif">Sur devis</span></summary><p>Séjour sur place, récit écrit, photo, vidéo et drone, publiés sur Voyage avec Vue et relayés en newsletter et sur les réseaux.</p></details></div>
+      <div class="sub"><details><summary><h4>Destinations dessinées</h4><span class="tarif">Sur devis</span></summary><p>Votre territoire raconté à l’aquarelle : cartes, carnets, affiches, déclinables sur tous vos supports.</p></details></div>
+      <div class="sub"><details><summary><h4>Contenus pour vos canaux</h4><span class="tarif">Sur devis</span></summary><p>Une bibliothèque d’images et de capsules cédée pour votre site, vos réseaux et vos éditions.</p></details></div>
+    </div>
+    <div class="proof noimg"><div><span class="k">Nos relais</span><b>L’Opinion · Trait’s D’Co</b><p>Nos rubriques dans la presse : <a class="press-link" href="https://www.lopinion.fr/auteur/voyage-avec-vue">L’Opinion</a>, <a class="press-link" href="https://www.traits-dcomagazine.fr/author/voyage-avec-vue/">Trait’s D’Co</a>.</p></div></div>
+  </div>
+</div></section>
 
-<!-- PORTRAITS -->
-<section class="portraits grain" id="portraits">
+<!-- MARQUES -->
+<section class="aud marq" id="marques"><img class="aq" src="img/aq/fleur-violette.png" alt="" style="top:1.2rem;right:3%;width:170px"><div class="wrap aud-in">
+  <div>
+    <span class="num">03 · Vous êtes une marque</span>
+    <h2>Rencontrer notre communauté, <span class="serif">dans nos adresses.</span></h2>
+    <p class="need">Marques du voyage, de l’art de vivre, de l’outdoor : parler à des voyageurs attentifs, dans un contexte éditorial et dans des lieux réels.</p>
+    <div class="ctas"><a class="btn" href="https://pro.voyageavecvue.com/#contact-us">Proposer un partenariat</a><a class="btn alt" href="https://pro.voyageavecvue.com/#contact-us">Rejoindre le Club VAV</a></div>
+  </div>
+  <div>
+    <div class="offlist">
+      <div class="sub"><details><summary><h4>Publi-rédactionnel</h4><span class="tarif">Sur devis</span></summary><p>Un article, une place dans la newsletter, des stories : votre marque racontée dans notre ton éditorial.</p></details></div>
+      <div class="sub"><details><summary><h4>Opérations avec nos adresses</h4><span class="tarif">Sur devis</span></summary><p>Jeux concours, séjours, mises en situation : une adresse, une marque et Voyage avec Vue réunis autour d’une même opération.</p></details></div>
+      <div class="sub"><details><summary><h4>Le Club VAV</h4><span class="tarif">Sur devis</span></summary><p>Votre marque mise en avant auprès de notre communauté et de nos adresses, toute l’année.</p></details></div>
+    </div>
+    <div class="proof noimg"><div><span class="k">Référence</span><b>La Tiny House × Arthod</b><p>Un jeu concours tripartite entre une adresse, une marque et Voyage avec Vue, avec une bibliothèque de photos qui met en avant le lieu et la marque.</p></div></div>
+    <a class="btn alt" href="#creations" data-filter="reseaux" style="margin-top:1rem">Voir nos formats</a>
+  </div>
+</div></section>
+
+<!-- RÉFÉRENCES -->
+<section class="portraits refs-sec" id="portraits">
   <div class="wrap">
     <span class="rub"><span class="star">✶</span> Références</span>
     <h2>Notre point de Vue, <span class="serif">en images.</span></h2>
@@ -540,90 +661,59 @@ input,select,textarea{border:1px solid var(--ink)}
       <article class="ref"><div class="vis v5"><img class="fill" src="img/mi-cour.jpg" alt="La cour intérieure des Maisons Imaginaires" loading="lazy"></div><div class="txt"><span class="place">Bouches-du-Rhône</span><h3>Les Maisons Imaginaires</h3><p class="obj">Une bibliothèque de contenus qui traduit la singularité de l’adresse.</p></div></article>
       <article class="ref"><div class="vis v2"><video class="fill" src="video/nid-reel.mp4" poster="video/nid-reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Reel du Nid des Vosges : cabanes perchées dans la forêt"></video></div><div class="txt"><span class="place">Vosges · cabanes dans les arbres</span><h3>Le Nid des Vosges</h3><p class="obj">Un reel de 30 secondes tourné sur place : la forêt, les cabanes, le temps qui ralentit.</p></div></article>
     </div>
-    <div class="refs-cta"><a class="btn" href="https://pro.voyageavecvue.com/references">Voir nos références</a><a class="btn alt" href="https://pro.voyageavecvue.com/references">Nos réalisations vidéos</a></div>
-    <div class="gal-head">
-      <h3>En images</h3>
-      <p>Extraits de nos tournages : photos et vidéos des lieux qu'on a racontés.</p>
+    <div class="refs-cta"><a class="btn" href="https://pro.voyageavecvue.com/references">Voir nos références</a></div>
     </div>
-    <div class="gallery">
-      <figure class="slot video wide has-media"><video class="fill" src="video/drone-chassezac.mp4" poster="video/drone-chassezac-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Survol des gorges du Chassezac, près du C4"></video><figcaption>Vidéo · le Chassezac vu du ciel</figcaption></figure>
-      <figure class="slot has-media"><img class="fill" src="img/labarthe-porte.jpg" alt="Porte d'entrée fleurie du Domaine de Labarthe" loading="lazy"><figcaption>Photo · l'arrivée</figcaption></figure>
-      <figure class="slot has-media"><img class="fill" src="img/mi-citrons.jpg" alt="Citrons alignés sur une étagère des Maisons Imaginaires" loading="lazy"><figcaption>Photo · un détail</figcaption></figure>
-      <figure class="slot has-media"><img class="fill" src="img/mi-fenetre-main.jpg" alt="Une main ouvre une fenêtre sur la lumière du matin" loading="lazy"><figcaption>Photo · un moment vécu</figcaption></figure>
-      <figure class="slot has-media"><video class="fill" src="video/canoe.mp4" poster="video/canoe-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Canoë sur le Chassezac"></video><figcaption>Vidéo · le territoire</figcaption></figure>
-      <figure class="slot has-media"><img class="fill" src="img/nid-cabane.jpg" alt="Cabanes perchées du Nid des Vosges, au milieu des pins" loading="lazy"><figcaption>Photo · le Nid des Vosges</figcaption></figure>
-      <figure class="slot video has-media"><video class="fill" src="video/pate-vertical.mp4" poster="video/pate-vertical-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Pâte à pizza travaillée à la main au C4"></video><figcaption>Vidéo · format vertical</figcaption></figure>
-    </div>
-  </div>
 </section>
 
-<!-- NOS FORMATS -->
-<section class="wrap" id="formats">
-  <span class="rub"><span class="star">✶</span> Nos formats</span>
-  <h2>Ce qu'on publie, <span class="serif">et pourquoi.</span></h2>
-  <p class="chapo">Donner envie, faire réserver, faire revenir.</p>
-  <div class="fmts">
-    <article class="fmt">
-      <div class="fmt-txt"><span class="cat">Illustration</span><h3>Destinations dessinées</h3><p>Un lieu raconté à l'aquarelle, du site au livret d'accueil.</p><p class="where">Ici : les Cabanes de Salagnac</p></div>
-      <div class="strip"><figure class="it r916"><video src="video/dessin-anime.mp4" poster="video/dessin-anime-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Aquarelle animée d’une cabane dans les arbres"></video></figure><figure class="it r45"><img src="img/formats/f01.jpg" alt="Aquarelle des Cabanes de Salagnac" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f02.jpg" alt="Aquarelle : temps calme dans la cabane" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f03.jpg" alt="Aquarelle : herbier et curiosités de la forêt" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f04.jpg" alt="Aquarelle : une terrasse en bois au milieu des arbres" loading="lazy"></figure></div>
-    </article>
-    <article class="fmt">
-      <div class="fmt-txt"><span class="cat">Réseaux sociaux</span><h3>Stories et réels</h3><p>Des formats courts, tournés sur place.</p><p class="where">Ici : le Nid des Vosges, et une story de lieu</p></div>
-      <div class="strip"><figure class="it r916"><video src="video/nid-reel.mp4" poster="video/nid-reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Reel du Nid des Vosges"></video></figure><figure class="it r916"><video src="video/story-lieu.mp4" poster="video/story-lieu-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Story vidéo : visite d’un intérieur ouvert sur le jardin"></video></figure><figure class="it r916"><img src="img/formats/f11.jpg" alt="Story : faire une virée à deux, au bord d’une piscine" loading="lazy"></figure></div>
-    </article>
-    <article class="fmt">
-      <div class="fmt-txt"><span class="cat">Newsletter</span><h3>Une adresse à la une</h3><p>Chaque mois, une adresse en couverture.</p><p class="where">Ici : Grand Hôtel du Golfe, Les Fleurines</p></div>
-      <div class="strip"><figure class="it r916"><img src="img/formats/f09.jpg" alt="Story de la newsletter de septembre 2026 : Grand Hôtel du Golfe" loading="lazy"></figure><figure class="it r916"><img src="img/formats/f12.jpg" alt="Story de la newsletter de juin 2026 : Les Fleurines" loading="lazy"></figure></div>
-    </article>
-    <article class="fmt">
-      <div class="fmt-txt"><span class="cat">Rubriques du média</span><h3>Portraits et fiches adresse</h3><p>La parole à ceux qui font les lieux.</p><p class="where">Ici : un chef étoilé, le Mas du Couvin</p></div>
-      <div class="strip"><figure class="it r45"><img src="img/formats/f05.jpg" alt="Rubrique Point de VU(e)s : portrait d’un chef étoilé" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f07.jpg" alt="Fiche adresse du Mas du Couvin, en Camargue" loading="lazy"></figure><figure class="it r45"><img src="img/formats/f08.jpg" alt="Carte : vous n’en avez pas assez VU ? Encore plus d’adresses sur le site" loading="lazy"></figure></div>
-    </article>
-  </div>
+<!-- NOS CRÉATIONS -->
+<section class="wrap crea" id="creations">
+  <span class="rub"><span class="star">✶</span> Nos créations</span>
+  <h2>Ce qu’on a créé, <span class="serif">pour nos adresses.</span></h2>
+  <div class="chips" role="group" aria-label="Filtrer les créations"><button type="button" data-f="tout" aria-pressed="true">Tout<span>27</span></button><button type="button" data-f="photo" aria-pressed="false">Photo<span>12</span></button><button type="button" data-f="video" aria-pressed="false">Vidéo<span>6</span></button><button type="button" data-f="aquarelle" aria-pressed="false">Aquarelle<span>4</span></button><button type="button" data-f="reseaux" aria-pressed="false">Réseaux et newsletter<span>3</span></button><button type="button" data-f="rubrique" aria-pressed="false">Rubriques<span>2</span></button></div>
+  <div class="masonry" id="mas"><button type="button" class="tile" data-cat="photo" data-src="img/labarthe-porte.jpg" data-type="img" data-t="Domaine de Labarthe" data-c="Lot · l’arrivée"><img src="img/labarthe-porte.jpg" alt="Domaine de Labarthe, Lot · l’arrivée" loading="lazy"><span class="cap"><b>Domaine de Labarthe</b>Lot · l’arrivée</span></button><button type="button" class="tile" data-cat="photo" data-src="img/mi-citrons.jpg" data-type="img" data-t="Les Maisons Imaginaires" data-c="Bouches-du-Rhône · un détail"><img src="img/mi-citrons.jpg" alt="Les Maisons Imaginaires, Bouches-du-Rhône · un détail" loading="lazy"><span class="cap"><b>Les Maisons Imaginaires</b>Bouches-du-Rhône · un détail</span></button><button type="button" class="tile" data-cat="video" data-src="video/drone-chassezac.mp4" data-type="video" data-t="Domaine le C4" data-c="Ardèche · le Chassezac vu du ciel"><img src="video/drone-chassezac-poster.jpg" alt="Domaine le C4, Ardèche · le Chassezac vu du ciel" loading="lazy"><span class="play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M5 3l10 6-10 6z" fill="#F7F3EE"/></svg></span><span class="cap"><b>Domaine le C4</b>Ardèche · le Chassezac vu du ciel</span></button><button type="button" class="tile" data-cat="aquarelle" data-src="img/formats/f01.jpg" data-type="img" data-t="Cabanes de Salagnac" data-c="Destination dessinée"><img src="img/formats/f01.jpg" alt="Cabanes de Salagnac, Destination dessinée" loading="lazy"><span class="cap"><b>Cabanes de Salagnac</b>Destination dessinée</span></button><button type="button" class="tile" data-cat="photo" data-src="img/nid-cabane.jpg" data-type="img" data-t="Le Nid des Vosges" data-c="Vosges · les cabanes"><img src="img/nid-cabane.jpg" alt="Le Nid des Vosges, Vosges · les cabanes" loading="lazy"><span class="cap"><b>Le Nid des Vosges</b>Vosges · les cabanes</span></button><button type="button" class="tile" data-cat="reseaux" data-src="img/formats/f09.jpg" data-type="img" data-t="Newsletter" data-c="Une adresse à la une"><img src="img/formats/f09.jpg" alt="Newsletter, Une adresse à la une" loading="lazy"><span class="cap"><b>Newsletter</b>Une adresse à la une</span></button><button type="button" class="tile" data-cat="photo" data-src="img/detail-vase.jpg" data-type="img" data-t="Domaine le C4" data-c="Ardèche · Laumaga"><img src="img/detail-vase.jpg" alt="Domaine le C4, Ardèche · Laumaga" loading="lazy"><span class="cap"><b>Domaine le C4</b>Ardèche · Laumaga</span></button><button type="button" class="tile" data-cat="video" data-src="video/nid-reel.mp4" data-type="video" data-t="Le Nid des Vosges" data-c="Reel de 30 secondes"><img src="video/nid-reel-poster.jpg" alt="Le Nid des Vosges, Reel de 30 secondes" loading="lazy"><span class="play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M5 3l10 6-10 6z" fill="#F7F3EE"/></svg></span><span class="cap"><b>Le Nid des Vosges</b>Reel de 30 secondes</span></button><button type="button" class="tile" data-cat="photo" data-src="img/labarthe-pigeonnier.jpg" data-type="img" data-t="Domaine de Labarthe" data-c="Lot · le pigeonnier"><img src="img/labarthe-pigeonnier.jpg" alt="Domaine de Labarthe, Lot · le pigeonnier" loading="lazy"><span class="cap"><b>Domaine de Labarthe</b>Lot · le pigeonnier</span></button><button type="button" class="tile" data-cat="aquarelle" data-src="img/formats/f03.jpg" data-type="img" data-t="Cabanes de Salagnac" data-c="Herbier et surprises de la forêt"><img src="img/formats/f03.jpg" alt="Cabanes de Salagnac, Herbier et surprises de la forêt" loading="lazy"><span class="cap"><b>Cabanes de Salagnac</b>Herbier et surprises de la forêt</span></button><button type="button" class="tile" data-cat="photo" data-src="img/mi-fenetre-main.jpg" data-type="img" data-t="Les Maisons Imaginaires" data-c="Bouches-du-Rhône · le matin"><img src="img/mi-fenetre-main.jpg" alt="Les Maisons Imaginaires, Bouches-du-Rhône · le matin" loading="lazy"><span class="cap"><b>Les Maisons Imaginaires</b>Bouches-du-Rhône · le matin</span></button><button type="button" class="tile" data-cat="rubrique" data-src="img/formats/f05.jpg" data-type="img" data-t="Point de VU(e)s" data-c="Portrait d’un chef étoilé"><img src="img/formats/f05.jpg" alt="Point de VU(e)s, Portrait d’un chef étoilé" loading="lazy"><span class="cap"><b>Point de VU(e)s</b>Portrait d’un chef étoilé</span></button><button type="button" class="tile more" data-cat="photo" data-src="img/laumaga-sejour.jpg" data-type="img" data-t="Domaine le C4" data-c="Ardèche · le séjour de Laumaga"><img src="img/laumaga-sejour.jpg" alt="Domaine le C4, Ardèche · le séjour de Laumaga" loading="lazy"><span class="cap"><b>Domaine le C4</b>Ardèche · le séjour de Laumaga</span></button><button type="button" class="tile more" data-cat="video" data-src="video/canoe.mp4" data-type="video" data-t="Domaine le C4" data-c="Ardèche · le territoire"><img src="video/canoe-poster.jpg" alt="Domaine le C4, Ardèche · le territoire" loading="lazy"><span class="play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M5 3l10 6-10 6z" fill="#F7F3EE"/></svg></span><span class="cap"><b>Domaine le C4</b>Ardèche · le territoire</span></button><button type="button" class="tile more" data-cat="reseaux" data-src="img/formats/f11.jpg" data-type="img" data-t="Story" data-c="Faire une virée à deux"><img src="img/formats/f11.jpg" alt="Story, Faire une virée à deux" loading="lazy"><span class="cap"><b>Story</b>Faire une virée à deux</span></button><button type="button" class="tile more" data-cat="photo" data-src="img/mi-salon.jpg" data-type="img" data-t="Les Maisons Imaginaires" data-c="Bouches-du-Rhône · le salon"><img src="img/mi-salon.jpg" alt="Les Maisons Imaginaires, Bouches-du-Rhône · le salon" loading="lazy"><span class="cap"><b>Les Maisons Imaginaires</b>Bouches-du-Rhône · le salon</span></button><button type="button" class="tile more" data-cat="aquarelle" data-src="img/formats/f02.jpg" data-type="img" data-t="Cabanes de Salagnac" data-c="Temps calme"><img src="img/formats/f02.jpg" alt="Cabanes de Salagnac, Temps calme" loading="lazy"><span class="cap"><b>Cabanes de Salagnac</b>Temps calme</span></button><button type="button" class="tile more" data-cat="photo" data-src="img/petit-dej.jpg" data-type="img" data-t="Domaine le C4" data-c="Ardèche · le petit-déjeuner"><img src="img/petit-dej.jpg" alt="Domaine le C4, Ardèche · le petit-déjeuner" loading="lazy"><span class="cap"><b>Domaine le C4</b>Ardèche · le petit-déjeuner</span></button><button type="button" class="tile more" data-cat="video" data-src="video/pate-vertical.mp4" data-type="video" data-t="Domaine le C4" data-c="Ardèche · la pâte"><img src="video/pate-vertical-poster.jpg" alt="Domaine le C4, Ardèche · la pâte" loading="lazy"><span class="play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M5 3l10 6-10 6z" fill="#F7F3EE"/></svg></span><span class="cap"><b>Domaine le C4</b>Ardèche · la pâte</span></button><button type="button" class="tile more" data-cat="rubrique" data-src="img/formats/f07.jpg" data-type="img" data-t="Fiche adresse" data-c="Le Mas du Couvin"><img src="img/formats/f07.jpg" alt="Fiche adresse, Le Mas du Couvin" loading="lazy"><span class="cap"><b>Fiche adresse</b>Le Mas du Couvin</span></button><button type="button" class="tile more" data-cat="photo" data-src="img/labarthe-terrasse.jpg" data-type="img" data-t="Domaine de Labarthe" data-c="Lot · la terrasse"><img src="img/labarthe-terrasse.jpg" alt="Domaine de Labarthe, Lot · la terrasse" loading="lazy"><span class="cap"><b>Domaine de Labarthe</b>Lot · la terrasse</span></button><button type="button" class="tile more" data-cat="reseaux" data-src="img/formats/f12.jpg" data-type="img" data-t="Newsletter" data-c="Les Fleurines"><img src="img/formats/f12.jpg" alt="Newsletter, Les Fleurines" loading="lazy"><span class="cap"><b>Newsletter</b>Les Fleurines</span></button><button type="button" class="tile more" data-cat="video" data-src="video/story-lieu.mp4" data-type="video" data-t="Story" data-c="Visite d’un lieu"><img src="video/story-lieu-poster.jpg" alt="Story, Visite d’un lieu" loading="lazy"><span class="play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M5 3l10 6-10 6z" fill="#F7F3EE"/></svg></span><span class="cap"><b>Story</b>Visite d’un lieu</span></button><button type="button" class="tile more" data-cat="aquarelle" data-src="img/formats/f04.jpg" data-type="img" data-t="Cabanes de Salagnac" data-c="Tout en bois"><img src="img/formats/f04.jpg" alt="Cabanes de Salagnac, Tout en bois" loading="lazy"><span class="cap"><b>Cabanes de Salagnac</b>Tout en bois</span></button><button type="button" class="tile more" data-cat="photo" data-src="img/nid-passerelle.jpg" data-type="img" data-t="Le Nid des Vosges" data-c="Vosges · la passerelle"><img src="img/nid-passerelle.jpg" alt="Le Nid des Vosges, Vosges · la passerelle" loading="lazy"><span class="cap"><b>Le Nid des Vosges</b>Vosges · la passerelle</span></button><button type="button" class="tile more" data-cat="video" data-src="video/dessin-anime.mp4" data-type="video" data-t="Cabanes de Salagnac" data-c="Aquarelle animée"><img src="video/dessin-anime-poster.jpg" alt="Cabanes de Salagnac, Aquarelle animée" loading="lazy"><span class="play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M5 3l10 6-10 6z" fill="#F7F3EE"/></svg></span><span class="cap"><b>Cabanes de Salagnac</b>Aquarelle animée</span></button><button type="button" class="tile more" data-cat="photo" data-src="img/mi-fenetre-jardin.jpg" data-type="img" data-t="Les Maisons Imaginaires" data-c="Bouches-du-Rhône · le jardin"><img src="img/mi-fenetre-jardin.jpg" alt="Les Maisons Imaginaires, Bouches-du-Rhône · le jardin" loading="lazy"><span class="cap"><b>Les Maisons Imaginaires</b>Bouches-du-Rhône · le jardin</span></button></div>
+  <div class="more-btn"><button type="button" class="btn alt" id="moreb">Tout afficher (27)</button></div>
 </section>
+<dialog class="lb" id="lb" aria-label="Agrandissement">
+  <div class="lb-in"><div class="lb-media" id="lbm"></div><p class="lb-cap" id="lbc"></p></div>
+  <button type="button" class="x" aria-label="Fermer">✕</button><button type="button" class="prev" aria-label="Précédent">‹</button><button type="button" class="next" aria-label="Suivant">›</button>
+</dialog>
 
-<!-- LA CARTE -->
-<section class="wrap" id="carte">
-  <span class="rub"><span class="star">✶</span> Le parcours</span>
-  <h2>Rejoindre, révéler, <span class="serif">faire grandir.</span></h2>
-  <p class="chapo">Trois étapes, à votre rythme, avec un seul interlocuteur.</p>
-  <div class="offers">
-    <article class="offer">
-      <div class="head"><span class="step">Étape 1 · La Collection</span><h3>Rejoindre</h3><p class="for">Révèle votre adresse.</p></div>
-      <div class="sub"><details><summary><h4>La Collection</h4><span class="tarif">420 € HT / an</span></summary><p>Une visibilité éditoriale portée par notre média : les réseaux sociaux, le site internet, la newsletter, les activations marketing.</p></details></div>
-    </article>
-    <article class="offer">
-      <div class="head"><span class="step">Étape 2 · Création</span><h3>Révéler</h3><p class="for">Révèle votre image.</p></div>
-      <div class="sub"><details><summary><h4>Shooting photo</h4><span class="tarif">Sur devis</span></summary><p>Une bibliothèque de contenus mixant les expériences, la singularité du lieu et le territoire. 100 images livrées, pour près de 12 mois de contenu.</p></details></div>
-      <div class="sub"><details><summary><h4>Vidéos et capsules immersives</h4><span class="tarif">Sur devis</span></summary><p>Capsules, formats longs adaptés Reel ou paysage, tournages avec casting pour vos campagnes.</p></details></div>
-      <div class="sub"><details><summary><h4>Direction artistique 360</h4><span class="tarif">Sur devis</span></summary><p>Storytelling, brand content, charte graphique, destinations dessinées, intention visuelle par canal et stratégie de contenu.</p></details></div>
-    </article>
-    <article class="offer">
-      <div class="head"><span class="step">Étape 3 · Stratégie</span><h3>Faire grandir</h3><p class="for">Soulager l’instant T, structurer le long terme.</p></div>
-      <div class="sub"><details><summary><h4>Communication digitale</h4><span class="tarif">Sur devis</span></summary><p>Planning éditorial, réseaux sociaux, newsletters, parcours de réservation et e-mails automatisés. Durée minimale : 3 mois.</p></details></div>
-      <div class="sub"><details><summary><h4>Renfort commercial</h4><span class="tarif">Sur devis</span></summary><p>Offre loisirs ou événementiels, partenariats B2B avec agences et réceptifs, devis des demandes entrantes. Durée minimale : 6 mois.</p></details></div>
-      <div class="sub"><details><summary><h4>Backoffice externe et hotline</h4><span class="tarif">Sur devis</span></summary><p>Livret d’accueil, mises à jour des OTA, site web, rédaction d’articles, aides à la vente. Durée : quand c’est nécessaire !</p></details></div>
-    </article>
-  </div>
-  <div class="entry">
-    <div><h3>On commence par un diagnostic</h3><p>20 minutes offertes, trois pistes concrètes.</p></div>
-    <a class="btn" href="https://pro.voyageavecvue.com/#contact-us">Discuter de vos besoins</a>
-  </div>
-</section>
-
-<!-- REDACTION -->
-<section class="redac grain" id="redaction">
+<!-- CONTACT -->
+<section class="final" id="redaction"><img class="aq" src="img/aq/fleur-jaune.png" alt="" style="bottom:1rem;right:3%;width:110px">
   <div class="wrap">
     <span class="rub"><span class="star">✶</span> Nous contacter</span>
     <h2>Croisons <span class="serif">nos regards.</span></h2>
-    <div class="contact-box">
-      <p>Une question, un projet, une adresse à référencer ? Parlons-en.</p>
-      <a class="btn" href="https://pro.voyageavecvue.com/#contact-us">Nous contacter</a>
+    <div class="final-grid">
+      <a href="https://pro.voyageavecvue.com/la-collection-voyage-avec-vue#adhesion"><span class="k">Vous êtes un lieu</span><b>Rejoindre la Collection</b><span class="go">420 € HT / an →</span></a>
+      <a href="https://pro.voyageavecvue.com/#contact-us"><span class="k">Vous êtes un territoire</span><b>Proposer une collaboration</b><span class="go">Nous écrire →</span></a>
+      <a href="https://pro.voyageavecvue.com/#contact-us"><span class="k">Vous êtes une marque</span><b>Proposer un partenariat</b><span class="go">Nous écrire →</span></a>
     </div>
   </div>
 </section>
 
-
+<script>
+(function(){
+  var chips=document.querySelectorAll('.chips button'),tiles=[].slice.call(document.querySelectorAll('.tile'));
+  var mas=document.getElementById('mas');document.getElementById('moreb').addEventListener('click',function(){mas.classList.add('all')});
+  function filter(f){if(f!=='tout')mas.classList.add('all');chips.forEach(function(c){c.setAttribute('aria-pressed',c.dataset.f===f?'true':'false')});tiles.forEach(function(t){t.hidden=!(f==='tout'||t.dataset.cat===f)})}
+  chips.forEach(function(c){c.addEventListener('click',function(){filter(c.dataset.f)})});
+  document.querySelectorAll('a[data-filter]').forEach(function(a){a.addEventListener('click',function(){filter(a.dataset.filter)})});
+  var lb=document.getElementById('lb'),m=document.getElementById('lbm'),cap=document.getElementById('lbc'),cur=0;
+  function vis(){return tiles.filter(function(t){return !t.hidden&&t.offsetParent!==null})}
+  function show(t){var v=vis();cur=v.indexOf(t);m.innerHTML='';var el;
+    if(t.dataset.type==='video'){el=document.createElement('video');el.src=t.dataset.src;el.controls=true;el.autoplay=true;el.playsInline=true;el.loop=true}
+    else{el=document.createElement('img');el.src=t.dataset.src;el.alt=t.querySelector('img').alt}
+    m.appendChild(el);cap.innerHTML='<b>'+t.dataset.t+'</b>'+t.dataset.c;}
+  tiles.forEach(function(t){t.addEventListener('click',function(){show(t);if(lb.showModal&&!lb.open)lb.showModal()})});
+  function step(d){var v=vis();if(!v.length)return;show(v[(cur+d+v.length)%v.length])}
+  lb.querySelector('.x').addEventListener('click',function(){lb.close()});
+  lb.querySelector('.prev').addEventListener('click',function(){step(-1)});
+  lb.querySelector('.next').addEventListener('click',function(){step(1)});
+  lb.addEventListener('close',function(){m.innerHTML=''});
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb-in')||e.target===m)lb.close()});
+  document.addEventListener('keydown',function(e){if(!lb.open)return;if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+})();
+</script>
 <script>
 (function(){try{if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('video').forEach(function(v){v.removeAttribute('autoplay');v.pause();v.controls=true;});}}catch(e){}})();
 </script>
